@@ -46,19 +46,19 @@
 
   .shipping {
     &::before {
-      background-image: url('../img/icon-shipping.png');
+      background-image: url('img/icon-shipping.png');
     }
   }
 
   .quality {
     &::before {
-      background-image: url('../img/icon-quality.png');
+      background-image: url('img/icon-quality.png');
     }
   }
 
   .service {
     &::before {
-      background-image: url('../img/icon-service.png');
+      background-image: url('img/icon-service.png');
     }
   }
 }
