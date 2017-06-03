@@ -1,0 +1,27 @@
+/*
+
+  categories-wrapper.scss
+
+*/
+
+
+.categories-wrapper {
+  padding: 100px 0;
+
+  .column-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .column {
+    box-shadow: 0px 15px 36px rgba(0,0,0,.16);
+
+    img {
+      display: block;
+    }
+  }
+
+  .inner-content {
+    display: none;
+  }
+}

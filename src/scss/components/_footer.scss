@@ -1,0 +1,63 @@
+/*
+
+  footer.scss
+
+*/
+
+footer {
+  padding: 200px 0;
+  text-align: center;
+
+  .social-nav {
+    li {
+      list-style: none;
+      display: inline-block;
+    }
+
+    a {
+      width: 40px;
+      height: 40px;
+      border: 2px solid $color-main;
+      background: $color-main;
+      border-radius: 50%;
+      display: block;
+      transition: $transition;
+      color: $color-background;
+      text-align: center;
+
+      span {
+        text-indent: -9999px;
+        display: inline-block;
+      }
+
+      &::before {
+        font-family: 'FontAwesome';
+        font-size: 24px;
+        position: relative;
+        top: -4px;
+      }
+
+      &:hover {
+        background: transparent;
+        color: $color-main;
+      }
+    }
+
+    .instagram {
+      &::before {
+        content: '\f16d';
+      }
+    }
+
+    .facebook {
+      &::before {
+        content: '\f09a';
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 20px;
+    margin-top: 2.5em;
+  }
+}

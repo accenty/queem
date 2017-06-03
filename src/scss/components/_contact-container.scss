@@ -1,0 +1,105 @@
+/*
+
+  _contact-container.scss
+
+*/
+
+.contact-container {
+  margin-top: -20.5%;
+
+  .content-wrap {
+    max-width: $content-width-medium;
+    display: flex;
+    box-shadow: 0 15px 36px rgba(0,0,0,.13);
+  }
+
+  .contact-wrapper {
+    background: $color-background;
+    width: 100%;
+    padding: 95px 100px;
+
+    h3 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 1.625em;
+    }
+
+    fieldset {
+      width: 87.4%;
+      @extend %clearfix;
+
+      &:nth-of-type(2) {
+        margin-top: 30px;
+      }
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      display: block;
+      border-radius: 11px;
+      font-size: 14px;
+      height: 69px;
+      border: 1px solid $color-neutral-2;
+      background: $color-neutral-1;
+      font-family: $font-main;
+      padding: 0 20px;
+      transition: $transition;
+
+      &::placeholder {
+        opacity: .5;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $color-main;
+      }
+    }
+
+    input {
+      float: left;
+      width: calc((100% / 2) - ((1 * 40px) / 2));
+      margin-right: 40px;
+
+      &:nth-of-type(2n) {
+        margin-right: 0;
+      }
+
+      &[type="submit"] {
+        max-width: 196px;
+        height: 69px;
+        border-radius: calc(69px / 2);
+        border: 3px solid $color-font;
+        background: $color-font;
+        color: $color-background;
+        font-weight: bold;
+        font-size: 24px;
+        box-shadow: 0 7px 10px rgba(0,0,0,.26);
+        transition: $transition;
+        cursor: pointer;
+        margin-top: 1.66em;
+
+        &:hover {
+          color: $color-font;
+          background: transparent;
+          box-shadow: none;
+        }
+      }
+    }
+
+    textarea {
+      width: 87.4%;
+      height: 198px;
+      padding: 20px;
+      margin-top: 30px;
+      resize: none;
+    }
+  }
+
+  .gmaps-wrapper {
+    img {
+      display: block;
+    }
+  }
+
+}

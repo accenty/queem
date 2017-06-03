@@ -1,0 +1,33 @@
+/*
+
+  main-nav.scss
+
+*/
+
+.main-nav {
+  height: 100%;
+  margin-right: 60px;
+
+  ul {
+    @extend %clearfix;
+  }
+
+  li {
+    float: left;
+    margin-right: 42px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: $color-background;
+    font-size: 20px;
+    transition: $transition;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+}

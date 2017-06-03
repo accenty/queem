@@ -1,0 +1,64 @@
+/*
+
+  service-wrapper.scss
+
+*/
+
+.service-wrapper {
+  width: 100%;
+  height: 157px;
+  background: $color-main;
+  color: $color-background;
+
+  .content-wrap {
+    height: 100%;
+    margin: auto;
+  }
+
+  .column-wrap {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .column {
+    text-align: left;
+    font-size: 19px;
+    line-height: 1.5em;
+    max-width: 268px;
+    padding-left: 95px;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
+  }
+
+  .shipping {
+    &::before {
+      background-image: url('../img/icon-shipping.png');
+    }
+  }
+
+  .quality {
+    &::before {
+      background-image: url('../img/icon-quality.png');
+    }
+  }
+
+  .service {
+    &::before {
+      background-image: url('../img/icon-service.png');
+    }
+  }
+}

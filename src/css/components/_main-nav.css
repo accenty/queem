@@ -1,0 +1,9 @@
+/*
+
+  main-nav.scss
+
+*/
+.main-nav {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end; }

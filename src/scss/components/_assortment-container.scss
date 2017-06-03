@@ -1,0 +1,57 @@
+/*
+
+  assortment-container.scss
+
+*/
+
+.assortment-container {
+  height: 1165px;
+  padding: 153px 0 0;
+  background: $color-neutral-1;
+
+  .content-wrap {
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 42px;
+    line-height: 1.23em;
+    font-weight: bold;
+    margin-bottom: 0.738em;
+  }
+
+  p {
+    font-size: 28px;
+    line-height: 1.857em;
+    max-width: 1259px;
+    width: 86%;
+    margin: auto;
+    margin-bottom: 3.5em;
+  }
+
+  .shop {
+    background: $color-main;
+    border: 3px solid $color-main;
+    border-radius: 45px;
+    font-weight: bold;
+    color: $color-background;
+    font-size: 30px;
+    line-height: 1.73em;
+    display: table;
+    max-width: 460px;
+    height: 90px;
+    width: 80%;
+    margin: auto;
+    transition: $transition;
+
+    span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      background: transparent;
+      color: $color-main;
+    }
+  }
+}

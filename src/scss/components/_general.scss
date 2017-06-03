@@ -1,0 +1,44 @@
+/*
+
+  general.scss
+
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size-base;
+}
+
+html,
+body {
+  font-family: $font-main;
+}
+
+::selection {
+  background: $color-main;
+  color: $color-background;
+}
+
+body {
+  background-color: $color-background;
+  background-image: url('../img/background-grid.png');
+  background-position: top left;
+  font-size: 1.6rem;
+  color: $color-font;
+  line-height: 1.6em;
+}
+
+a {
+  text-decoration: none;
+  color: $color-font;
+}
+
+.content-wrap {
+  margin: auto;
+  max-width: $content-width;
+  padding: 0px $content-padding;
+  width: calc(100% - 100px);
+}
