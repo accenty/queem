@@ -603,7 +603,7 @@ a {
 @media screen and (max-width: 560px) {
   .header {
     min-height: 0;
-    height: 90vh;
+    height: 64vh;
   }
 }
 
@@ -1001,6 +1001,12 @@ a {
   .service-wrapper .column::before {
     width: 45px;
     height: 45px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .service-wrapper .column:last-of-type {
+    margin-bottom: 0;
   }
 }
 

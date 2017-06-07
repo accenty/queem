@@ -64,6 +64,12 @@
         height: 45px;
       }
     }
+
+    &:last-of-type {
+      @media screen and (max-width: $mobile-large) {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .shipping {
