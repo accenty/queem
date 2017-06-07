@@ -152,6 +152,10 @@
     height: 158px;
     min-height: 0;
 
+    @media screen and (max-width: $mobile-large) {
+      height: 80px;
+    }
+
     .title-container {
       display: none;
     }

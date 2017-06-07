@@ -745,6 +745,13 @@ a {
   min-height: 0;
 }
 
+@media screen and (max-width: 560px) {
+  .archive .header,
+  .single-product .header {
+    height: 80px;
+  }
+}
+
 .archive .header .title-container,
 .single-product .header .title-container {
   display: none;
