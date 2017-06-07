@@ -1,9 +1,7 @@
 /*
-	Theme Name: Queem - Lifestyle & Sport
-	Description: Queem Webshop Wordpress & Woocommerce Theme
-	Version: 1.0.0
-	Author: Accenty
-	Author URI: http://accenty.de
+
+  screen.scss
+
 */
 
 // Dependencies
@@ -31,3 +29,12 @@
 @import 'components/off-canvas';
 @import 'components/sections';
 @import 'components/footer';
+
+@import 'woocommerce/breadcrumbs';
+@import 'woocommerce/button';
+@import 'woocommerce/cart';
+@import 'woocommerce/checkout';
+@import 'woocommerce/product-archive';
+@import 'woocommerce/single-product';
+@import 'woocommerce/tabs';
+@import 'woocommerce/woocommerce-order-received';

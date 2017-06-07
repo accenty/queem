@@ -16,7 +16,7 @@
           <li class="column">
             <a href="#">
               <figure>
-                <img src="../img/content-img-01.png" alt="Content-image-01">
+                <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/content-img-01.png" alt="Content-image-01">
               </figure>
               <div class="inner-content">
                 <h2>Frau</h2>
@@ -27,7 +27,7 @@
           <li class="column">
             <a href="#">
               <figure>
-                <img src="img/content-img-02.png" alt="Content-image-02">
+                <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/content-img-02.png" alt="Content-image-02">
               </figure>
               <div class="inner-content">
                 <h2>Mann</h2>
@@ -38,7 +38,7 @@
           <li class="column">
             <a href="#">
               <figure>
-                <img src="img/content-img-03.png" alt="Content-image-03">
+                <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/content-img-03.png" alt="Content-image-03">
               </figure>
               <div class="inner-content">
                 <h2>Sets</h2>
@@ -91,7 +91,7 @@
         <ul class="column-wrap">
           <li class="column">
             <figure>
-              <img src="img/product-queem-whey.png" alt="">
+              <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/product-queem-whey.png" alt="">
             </figure>
             <h3>Queem Whey</h3>
             <span class="subline">Männer - 750g</span>
@@ -102,7 +102,7 @@
           </li>
           <li class="column">
             <figure>
-              <img src="img/product-queem-whey.png" alt="">
+              <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/product-queem-whey.png" alt="">
             </figure>
             <h3>Queem Whey</h3>
             <span class="subline">Männer - 750g</span>
@@ -113,7 +113,7 @@
           </li>
           <li class="column">
             <figure>
-              <img src="img/product-queem-whey.png" alt="">
+              <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/product-queem-whey.png" alt="">
             </figure>
             <h3>Queem Whey</h3>
             <span class="subline">Männer - 750g</span>
@@ -124,7 +124,7 @@
           </li>
           <li class="column">
             <figure>
-              <img src="img/product-queem-whey.png" alt="">
+              <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/product-queem-whey.png" alt="">
             </figure>
             <h3>Queem Whey</h3>
             <span class="subline">Männer - 750g</span>
@@ -135,7 +135,7 @@
           </li>
           <li class="column">
             <figure>
-              <img src="img/product-queem-whey.png" alt="">
+              <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/product-queem-whey.png" alt="">
             </figure>
             <h3>Queem Whey</h3>
             <span class="subline">Männer - 750g</span>
@@ -146,7 +146,7 @@
           </li>
           <li class="column">
             <figure>
-              <img src="img/product-queem-whey.png" alt="">
+              <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/product-queem-whey.png" alt="">
             </figure>
             <h3>Queem Whey</h3>
             <span class="subline">Männer - 750g</span>

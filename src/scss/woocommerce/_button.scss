@@ -1,0 +1,107 @@
+.woocommerce {
+  a {
+    &.button {
+      border-radius: calc(57px / 2);
+      display: inline-block;
+      margin: auto;
+      max-width: 226px;
+      width: 100%;
+      padding-top: 18px;
+      height: 57px;
+      background: $color-main-2;
+      color: $color-background;
+      border: 2px solid $color-main-2;
+      font-weight: bold;
+      font-size: 18px;
+      transition: $transition;
+      margin-top: 2.83em;
+
+      @media screen and (max-width: $tablet-portrait ) {
+        height: 46px;
+        font-size: 16px;
+        width: 80%;
+      }
+
+      span {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      &:hover {
+        background: transparent;
+        color: $color-main-2;
+      }
+
+      &.added {
+        color: $color-cart-positive;
+
+        &::after {
+          content: '\f00c';
+          font-family: 'FontAwesome';
+        }
+      }
+
+      &.loading {
+        opacity: 1;
+        color: $color-font-dark;
+        position: relative;
+
+        &::after {
+          font-size: 14px;
+          display: block;
+          line-height: 1;
+          width: 14px;
+          height: 14px;
+          text-align: center;
+          padding-left: 2px;
+          padding-top: 2px;
+          padding-bottom: 2px;
+          top: -4px;
+          right: 0;
+          font-family: 'FontAwesome';
+          content: '\f013';
+          animation: none;
+          animation: spin 1.5s linear infinite;
+
+          @keyframes spin {
+            0% {
+              transform: rotate(0);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+        }
+      }
+
+      &.wc-backward {
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &.added_to_cart {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: .15em;
+      margin: .5em 0 0em 0;
+      display: block;
+      background: transparent;
+      color: $color-font;
+      padding: 0;
+
+      &:hover {
+        color: $color-font-dark;
+      }
+
+      &::after {
+        display: inline-block;
+        content: '\f105';
+        font-family: 'FontAwesome';
+        margin-left: .5em;
+      }
+    }
+  }
+}

@@ -9,12 +9,24 @@ $color-background:       #ffffff;
 
 $color-neutral-1:        #f5f5f5;
 $color-neutral-2:        #EBEBEB;
+$color-neutral-3:        #DEDEDE;
+$color-neutral-4:        #AAA;
+$color-neutral-5:        #999;
+
 
 $color-main:             #cbad79;
 $color-main-2:           #fc5c5c;
 
+$color-spec-cheese:      $color-main-2;
+
 $color-font:             #353535;
 $color-font-light:       #a0a0a0;
+
+$color-neutral-brightest:$color-background;
+$color-highlight:        $color-main-2;
+$color-cart-positive:    #58c067;
+
+$color-font-dark:        $color-font;
 
 // Website dimensions
 
@@ -26,9 +38,28 @@ $content-padding:        0;
 // Fonts
 
 $font-size-base:         16px;
+$font-size-small:        14px;
 
-$font-main:              'Avenir',-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+$font-main:              'Avenir','Lato',-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+
+$font-family:            $font-main;
 
 // Other stuff
 
 $transition:             all .4s cubic-bezier(0.86, 0, 0.07, 1);
+
+// Breakpoints
+
+$desktop-large:          1440px;
+$desktop:                1280px;
+$tablet-landscape:       1024px;
+$tablet-portrait:        768px;
+$mobile-large:           560px;
+$mobile:                 360px;
+
+$breakpoint-xlarge:      $desktop-large;
+$breakpoint-large:       $desktop;
+$breakpoint-medium-large:$tablet-landscape;
+$breakpoint-medium:      $tablet-portrait;
+$breakpoint-small:       $mobile-large;
+$breakpoint-xsmall:      $mobile;

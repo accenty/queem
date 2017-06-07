@@ -10,6 +10,10 @@
 
 html {
   font-size: $font-size-base;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 }
 
 html,
@@ -40,4 +44,20 @@ a {
   max-width: $content-width;
   padding: 0px $content-padding;
   width: calc(100% - 100px);
+
+  @media screen and (max-width: $tablet-landscape) {
+    width: calc(100% - 50px);
+  }
+
+  @media screen and (max-width: $mobile-large) {
+    width: calc(100% - 30px);
+  }
+}
+
+.page-wrap {
+  transition: $transition;
+
+  &.show-nav {
+    transform: translateX(-70vw);
+  }
 }

@@ -5,11 +5,17 @@
 */
 
 .header {
-  height: 93.45vh;
+  height: calc(100vh - 157px);
+  min-height: 827px;
   background: $color-font;
   position: relative;
   color: $color-background;
   overflow: hidden;
+
+  @media screen and (max-width: $mobile-large) {
+    min-height: 0;
+    height: 90vh;
+  }
 
   .content-wrap {
     max-width: $content-width-large;
@@ -18,26 +24,56 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    // margin-top: 60px;
   }
 
   h1 {
-    font-size: 60px;
+    font-size: 52px;
     line-height: 1.33em;
     margin-bottom: 40px;
+
+    @media screen and (max-width: $mobile-large) {
+      font-size: 21px;
+      text-align: center;
+    }
   }
 
   p {
     width: 50%;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1.81em;
     margin-bottom: 65px;
+
+    @media screen and (max-width: $mobile-large) {
+      font-size: 14px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+    }
   }
 
   figure {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: block;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      max-width: none;
+      height: auto;
+      width: 100%;
+      margin: auto;
+
+      @media screen and (max-width: $mobile-large) {
+        width: auto;
+        height: 100%;
+      }
+    }
   }
 
   .cta {
@@ -45,16 +81,23 @@
     vertical-align: middle;
     color: $color-background;
     border: 3px solid $color-main;
-    font-size: 20px;
+    font-size: 18px;
     text-transform: uppercase;
-    height: 80px;
+    height: 64px;
     width: 100%;
-    max-width: 320px;
+    max-width: 280px;
     text-align: center;
     border-radius: 40px;
     transition: $transition;
     overflow: hidden;
     position: relative;
+
+    @media screen and (max-width: $mobile-large) {
+      font-size: 16px;
+      width: 80%;
+      height: 48px;
+      margin: auto;
+    }
 
     span {
       display: table-cell;
@@ -85,10 +128,95 @@
   }
 }
 
+.shop {
+  .header {
+    height: 60vh;
+    min-height: 0;
+
+    &::after {
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(transparent,$color-font);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      content: '';
+    }
+  }
+}
+
+.archive,
+.single-product {
+  .header {
+    height: 158px;
+    min-height: 0;
+
+    .title-container {
+      display: none;
+    }
+  }
+}
+
+.hamburger {
+  width: 24px;
+  height: 12px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -7px;
+  cursor: pointer;
+
+  span,
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: $color-main;
+    transition: $transition;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    left: 0;
+  }
+
+  span {
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+  }
+
+  &.active {
+    span {
+      opacity: 0;
+    }
+
+    &::before {
+      top: 5px;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      bottom: 5px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
 .nav-wrapper {
   display: flex;
   align-items: center;
-  height: 200px;
+  height: 158px;
   position: absolute;
   top: 0;
   left: 0;
@@ -96,16 +224,28 @@
   background: rgba(0,0,0,.5);
   z-index: 3;
 
+  @media screen and (max-width: $mobile-large) {
+    height: 80px;
+  }
+
   .content-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: calc(100% - 100px);
+
+    @media screen and (max-width: $mobile-large) {
+      width: 100%;
+    }
   }
 
   .nav-container {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $tablet-portrait) {
+      display: none;
+    }
   }
 }
 
@@ -115,9 +255,9 @@
     border: 2px solid $color-background;
     color: $color-background;
     border-radius: 40px;
-    height: 80px;
+    height: 64px;
     width: 320px;
-    padding: 0 40px;
+    padding: 0 30px;
     background: transparent;
     font-family: $font-main;
     font-size: 20px;
@@ -138,8 +278,8 @@
 .cart-wrap {
   .cart {
     display: block;
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
     border: 2px solid $color-main;
     border-radius: 50%;
     background: url('img/icon-cart.png') no-repeat center center;
@@ -159,19 +299,35 @@
   background: url('img/logo-queem.svg') no-repeat;
   padding-left: 121px;
 
+  @media screen and (max-width: $mobile-large) {
+    width: 130px;
+    height: 50px;
+    padding-left: 60px;
+    margin: auto;
+  }
+
   span {
-    font-size: 36px;
+    font-size: 32px;
     letter-spacing: .120em;
     color: $color-main;
     text-transform: uppercase;
     position: relative;
     top: -5px;
+
+    @media screen and (max-width: $mobile-large) {
+      font-size: 18px;
+      top: -2px;
+    }
   }
 }
 
 
 .title-container {
   .content-wrap {
-    margin-top: 112px;
+    margin-top: 70px;
+
+    @media screen and (max-width: $mobile-large) {
+      margin-top: 30px;
+    }
   }
 }

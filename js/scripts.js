@@ -2892,8 +2892,14 @@
             transform: "translate(0px, " + n / 2 + "px)"
         });
     }
+    function r() {
+        t(".hamburger").click(function() {
+            t(this).toggleClass("active"), t(".off-canvas-nav").toggleClass("show-nav"), t(".page-wrap").toggleClass("show-nav"), 
+            t("html").toggleClass("no-scroll");
+        });
+    }
     t(function() {
-        t(e).scroll(function() {
+        r(), t(e).scroll(function() {
             n();
         });
     });

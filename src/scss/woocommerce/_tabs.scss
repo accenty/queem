@@ -1,0 +1,106 @@
+.woocommerce {
+
+  div.product {
+
+    .woocommerce-tabs {
+
+      ul.tabs {
+        padding: 0;
+        margin: 0;
+
+        li {
+          background: transparent;
+          text-transform: uppercase;
+          border: 0;
+          border-radius: 0;
+          font-size: 18px;
+          font-weight: 700;
+          letter-spacing: .125em;
+          margin: 0;
+          padding: .25em 1.25em;
+
+          @media screen and (max-width: $breakpoint-medium-large ) {
+            font-size: 16px;
+          }
+
+          @media screen and (max-width: $breakpoint-medium ) {
+            font-size: 14px;
+            padding: .125em .75em;
+          }
+
+          @media screen and (max-width: $breakpoint-small ) {
+            width: 100%;
+            display: block;
+            background: $color-neutral-brightest;
+            border: 1px solid rgba($color-main,.15);
+            border-bottom: 0;
+          }
+
+          &:first-of-type {
+            margin-right: -5px;
+          }
+
+          &::after,
+          &::before {
+            display: none;
+          }
+
+          &:hover {
+            a {
+              color: $color-font;
+            }
+          }
+
+          &.active {
+            background: $color-neutral-brightest;
+            border: 1px solid rgba($color-main,.15);
+            border-bottom: 0;
+
+            a {
+              color: $color-highlight;
+            }
+          }
+        }
+      }
+
+      .panel {
+        background: $color-neutral-brightest;
+        padding: 1.5em;
+        border: 1px solid rgba($color-main,.15);
+        border-top: 0;
+
+        @media screen and (max-width: $breakpoint-medium-large ) {
+          padding: .75em;
+        }
+
+        h2 {
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: .125em;
+          font-size: 18px;
+          color: $color-font;
+          margin-bottom: .5em;
+
+          @media screen and (max-width: $breakpoint-medium-large ) {
+            font-size: 16px;
+          }
+
+          @media screen and (max-width: $breakpoint-small ) {
+            font-size: 14px;
+          }
+        }
+
+        p {
+          padding: .5em 0;
+          line-height: 1.6em;
+          font-size: 16px;
+          color: $color-font;
+
+          @media screen and (max-width: $breakpoint-medium-large ) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

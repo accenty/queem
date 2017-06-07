@@ -35,8 +35,11 @@ if ( empty( $product ) || ! $product->is_visible() ) {
   </a>
 
   <div class="product__details">
-    <em><?php the_field('product-type'); ?></em>
+    <!-- <em><?php the_field('product-type'); ?></em> -->
     <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+		<p>
+			<?php the_excerpt(); ?>
+		</p>
 
 
     <h4>

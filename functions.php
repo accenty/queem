@@ -112,15 +112,27 @@ function html5blank_styles()
     wp_enqueue_style('html5blank'); // Enqueue it!
 }
 
-// Register HTML5 Blank Navigation
-function register_html5_menu()
-{
-    register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
-    ));
+// Custom Navigations
+// Main Header Nav
+function register_header_navigation() {
+  register_nav_menu('header-navigation',__( 'Header navigation' ));
 }
+// Initialize
+add_action( 'init', 'register_header_navigation' );
+
+// Header Shop Nav
+function register_shop_navigation() {
+  register_nav_menu('shop-navigation',__( 'Shop navigation' ));
+}
+// Initialize
+add_action( 'init', 'register_shop_navigation' );
+
+// Footer Nav
+function register_footer_navigation() {
+  register_nav_menu('footer-navigation',__( 'Footer navigation' ));
+}
+// Initialize
+add_action( 'init', 'register_footer_navigation' );
 
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 function my_wp_nav_menu_args($args = '')
@@ -334,7 +346,8 @@ add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_hea
 add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
-add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
+// add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
+// add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -437,5 +450,81 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+/*------------------------------------*\
+  Disable Srcset
+\*------------------------------------*/
+
+function disable_srcset($sources) {
+return false;
+}
+add_filter( 'wp_calculate_image_srcset', 'disable_srcset' );
+
+/*------------------------------------*\
+Woocommerce Stuff
+\*------------------------------------*/
+
+add_action( 'after_setup_theme', 'woocommerce_support' );
+
+function woocommerce_support() {
+  add_theme_support( 'woocommerce' );
+}
+
+remove_action('woocommerce_single_product_summary','woocommerce_template_single_price',10);
+remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta',40);
+add_action('woocommerce_single_product_summary','woocommerce_template_single_meta',7);
+add_action('woocommerce_single_product_summary','woocommerce_template_single_price',25);
+
+/**
+ * Ensure cart contents update when products are added to the cart via AJAX
+ */
+
+function my_header_add_to_cart_fragment( $fragments ) {
+
+    ob_start();
+    $count = WC()->cart->cart_contents_count;
+    ?><a class="cart-contents cart-count" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">Warenkorb <?php
+    if ( $count > 0 ) {
+        ?>
+        <span class="cart-contents-count">(<?php echo esc_html( $count ); ?>)</span>
+        <?php
+    } else {
+      echo '(0)';
+    }
+        ?></a><?php
+
+    $fragments['a.cart-contents'] = ob_get_clean();
+
+    return $fragments;
+}
+
+add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );
+
+/**
+ * Hide shipping rates when free shipping is available.
+ * Updated to support WooCommerce 2.6 Shipping Zones.
+ *
+ * @param array $rates Array of rates found for the package.
+ * @return array
+ */
+
+function my_hide_shipping_when_free_is_available( $rates ) {
+	$free = array();
+	foreach ( $rates as $rate_id => $rate ) {
+		if ( 'free_shipping' === $rate->method_id ) {
+			$free[ $rate_id ] = $rate;
+			break;
+		}
+	}
+	return ! empty( $free ) ? $free : $rates;
+}
+add_filter( 'woocommerce_package_rates', 'my_hide_shipping_when_free_is_available', 100 );
+
+// Disabling AJAX for Cart Page..
+
+function cart_script_disabled(){
+	wp_dequeue_script( 'wc-cart' );
+}
+add_action( 'wp_enqueue_scripts', 'cart_script_disabled' );
 
 ?>

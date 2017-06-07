@@ -1,0 +1,177 @@
+.search {
+  main {
+    padding: 3em 0;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 28px;
+    font-style: normal;
+    letter-spacing: .125em;
+    margin: 0;
+    word-wrap: break-word;
+
+    @media screen and (max-width: $breakpoint-medium) {
+      font-size: 21px;
+    }
+
+    @media screen and (max-width: $breakpoint-small) {
+      font-size: 18px;
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .125em;
+    margin-bottom: .5em;
+
+    @media screen and (max-width: $breakpoint-medium) {
+      font-size: 16px;
+    }
+  }
+
+  .search-results {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2em 0;
+    width: 100%;
+  }
+
+  // .page,
+  // .post {
+  //   width: 100%;
+  //   margin-bottom: 1em;
+  //   background: $color-neutral-brightest;
+  //   padding: 1.5em;
+  //   box-shadow: 0px 2px 5px rgba(0,0,0,.25);
+  // }
+
+  .product,
+  .page,
+  .post {
+    width: calc((100% / 4) - ((3 * 15px) / 4));
+    margin-right: 15px;
+    margin-bottom: 20px;
+    background: $color-neutral-brightest;
+    box-shadow: 0px 2px 5px rgba(0,0,0,.25);
+
+    @media screen and (max-width: $breakpoint-medium-large) {
+      width: calc((100% / 3) - ((2 * 15px) / 3));
+    }
+
+    @media screen and (max-width: $breakpoint-medium) {
+      width: calc((100% / 2) - ((1 * 15px) / 2));
+    }
+
+    @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    &.fade-in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .loop-content {
+      padding: 1.5em;
+    }
+
+    &:nth-of-type(2n) {
+      @media screen and (max-width: $breakpoint-medium) {
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-of-type(3n) {
+      @media screen and (max-width: $breakpoint-medium-large) {
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-medium) {
+        margin-right: 15px;
+      }
+
+      @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-of-type(4n) {
+      margin-right: 0;
+
+      @media screen and (max-width: $breakpoint-medium-large) {
+        margin-right: 15px;
+      }
+
+      @media screen and (max-width: $breakpoint-medium) {
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-of-type(6n) {
+
+      @media screen and (max-width: $breakpoint-medium-large) {
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-medium) {
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-of-type(12n) {
+      @media screen and (max-width: $breakpoint-medium-large) {
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+        margin-right: 0;
+      }
+    }
+
+    figure {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+
+      &::after {
+        display: block;
+        content: '';
+        padding-bottom: 100%;
+      }
+
+      img {
+        width: 100%;
+        transition: $transition;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+
+    &:hover {
+      figure {
+        img {
+          opacity: .9;
+        }
+      }
+    }
+  }
+}

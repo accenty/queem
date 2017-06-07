@@ -9,29 +9,59 @@
   height: 355px;
   color: $color-background;
 
+  @media screen and (max-width: $tablet-landscape) {
+    height: auto;
+    padding: 60px 0;
+  }
+
   .content-wrap {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: $tablet-portrait) {
+      flex-wrap: wrap;
+    }
   }
 
   .about-text {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1.85em;
     max-width: 880px;
     width: 100%;
+    padding-right: 2em;
+
+    @media screen and (max-width: $tablet-landscape) {
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: $tablet-portrait) {
+      max-width: none;
+    }
   }
 
   .cta {
     max-width: 400px;
     font-weight: bold;
-    font-size: 38px;
+    font-size: 32px;
     line-height: 1.23em;
     color: $color-background;
     position: relative;
     background: url('img/icon-arrow.png') no-repeat center right;
     background-size: 40px 80px;
     padding-right: 80px;
+
+    @media screen and (max-width: $tablet-landscape) {
+      font-size: 22px;
+      padding-right: 50px;
+    }
+
+    @media screen and (max-width: $tablet-portrait) {
+      background-size: 30px 70px;
+      font-size: 18px;
+      width: 100%;
+      margin-top: 2em;
+    }
   }
 }

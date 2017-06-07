@@ -9,10 +9,22 @@
   display: flex;
   flex-wrap: wrap;
 
+  @media screen and (max-width: $tablet-portrait) {
+    padding: 50px 0;
+  }
+
   .testimonial {
     width: calc(100% / 4);
     overflow: hidden;
     position: relative;
+
+    @media screen and (max-width: $tablet-landscape) {
+      width: calc(100% / 2);
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
 
     &:hover {
       img {
@@ -34,7 +46,7 @@
   .inner-content {
     background: rgba($color-main-2,.8);
     position: absolute;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 1.33;
     top: 100%;
     left: 0;
@@ -46,6 +58,15 @@
     text-align: center;
     color: $color-background;
     transition: $transition;
+
+    @media screen and (max-width: $tablet-portrait) {
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: $mobile-large) {
+      font-size: 14px;
+      padding: 0 20px;
+    }
 
     em {
       display: block;

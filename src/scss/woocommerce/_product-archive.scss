@@ -1,0 +1,292 @@
+.archive {
+  main {
+    padding: 4em 0 0;
+
+    .content-wrap {
+      max-width: $content-width-large;
+      margin: auto;
+    }
+  }
+
+  .page-title {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: .25em;
+  }
+}
+
+.product-archive {
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .product--small {
+    max-width: 480px;
+    width: calc((100% / 3) - ((2 * 80px) / 3));
+    margin-right: 80px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 80px;
+    box-shadow: 0px 15px 36px rgba(0,0,0,.1);
+    padding-bottom: 72px;
+
+    @media screen and (max-width: $tablet-landscape ) {
+      width: calc((100% / 2) - ((1 * 40px) / 2));
+      margin-right: 40px;
+      margin-bottom: 40px;
+      padding-bottom: 50px;
+    }
+
+    @media screen and (max-width: $tablet-portrait ) {
+      width: calc((100% / 2) - ((1 * 20px) / 2));
+      margin-right: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 50px;
+    }
+
+    @media screen and (max-width: $mobile-large ) {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    &:nth-child(2n) {
+      @media screen and (max-width: $tablet-landscape ) {
+        margin-right: 0;
+      }
+    }
+
+    &.fade-in {
+      opacity: 1;
+      transform: none;
+    }
+
+    &:nth-of-type(2n) {
+      @media screen and (max-width: $breakpoint-medium) {
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-of-type(3n) {
+      @media screen and (max-width: $breakpoint-medium-large) {
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-medium) {
+        margin-right: 15px;
+      }
+
+      @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-of-type(4n) {
+      margin-right: 0;
+
+      @media screen and (max-width: $breakpoint-medium-large) {
+        margin-right: 15px;
+      }
+
+      @media screen and (max-width: $breakpoint-medium) {
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-of-type(6n) {
+
+      @media screen and (max-width: $breakpoint-medium-large) {
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-medium) {
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-of-type(12n) {
+      @media screen and (max-width: $breakpoint-medium-large) {
+        margin-right: 0;
+      }
+
+      @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+        margin-right: 0;
+      }
+    }
+
+    figure {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+
+      &::after {
+        // display: block;
+        // content: '';
+        // padding-bottom: 100%;
+      }
+
+      img {
+        width: 100%;
+        transition: $transition;
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%,-50%);
+      }
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.75em;
+      max-width: 405px;
+      width: 85%;
+      margin: auto;
+      margin-top: 2.81em;
+    }
+
+    &:hover {
+      figure {
+        img {
+          opacity: .9;
+        }
+      }
+    }
+  }
+
+  .product__details {
+    padding: 1em 1.5em 1em;
+
+    em {
+      font-size: 11px;
+      color: $color-neutral-3;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+
+      &::before {
+        content: '\f02b';
+        font-family: 'FontAwesome';
+        margin-right: .25em;
+      }
+    }
+
+    h3,
+    .subline {
+      display: block;
+      font-size: 16px;
+      line-height: 1.875em;
+    }
+
+    h3 {
+      margin-top: 0.625em;
+    }
+
+    h4 {
+      font-weight: 700;
+      font-size: 24px;
+      color: $color-neutral-5;
+      letter-spacing: .1em;
+      margin-top: 1.25em;
+    }
+
+    .add-to-cart-button {
+      border-radius: calc(57px / 2);
+      display: table;
+      margin: auto;
+      max-width: 226px;
+      width: 100%;
+      height: 57px;
+      background: $color-main-2;
+      color: $color-background;
+      border: 2px solid $color-main-2;
+      font-weight: bold;
+      font-size: 18px;
+      transition: $transition;
+      margin-top: 2.83em;
+
+      @media screen and (max-width: $tablet-portrait ) {
+        height: 46px;
+        font-size: 16px;
+        width: 80%;
+      }
+
+      span {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      &:hover {
+        background: transparent;
+        color: $color-main-2;
+      }
+    }
+  }
+}
+
+  .cat-list {
+    text-align: center;
+    margin: 1em 0 3em;
+
+    h3 {
+      display: none;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 24px;
+
+      @media screen and (max-width: $mobile-large) {
+        margin-right: 6px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        display: block;
+        padding: 0 18px;
+        border: 2px solid $color-main;
+        color: $color-main;
+        font-weight: bold;
+        border-radius: 50px;
+        text-transform: uppercase;
+        font-size: 16px;
+        transition: $transition;
+
+        @media screen and (max-width: $mobile-large) {
+          padding: 0 15px;
+          font-size: 14px;
+        }
+
+        &:hover {
+          background: $color-main;
+          color: $color-background;
+        }
+      }
+    }
+  }

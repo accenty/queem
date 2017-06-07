@@ -16,14 +16,32 @@
 
 	</head>
 	<body <?php body_class(); ?>>
+    <div class="off-canvas-nav">
+      <div class="search-wrap">
+				<?php get_template_part('searchform'); ?>
+      </div>
+      <nav class="main-nav">
+				<?php wp_nav_menu(array('theme_location' => 'header-navigation')); ?>
+      </nav>
+      <div class="cart-wrap">
+        <a href="#" class="cart">
+          <span>Warenkorb</span>
+        </a>
+      </div>
+    </div>
+		<div class="page-wrap">
     <header class="header">
       <div class="nav-wrapper">
         <div class="content-wrap">
           <a href="<?php echo home_url(); ?>" class="logo"><span>Queem</span></a>
 
+          <i class="hamburger">
+            <span></span>
+          </i>
+
           <div class="nav-container">
             <nav class="main-nav">
-							<?php html5blank_nav(); ?>
+							<?php wp_nav_menu(array('theme_location' => 'header-navigation')); ?>
             </nav>
 
             <div class="search-wrap">
@@ -46,7 +64,7 @@
 					<?php if(get_field('title-subline')): ?>
 	          <p><?php the_Field('title-subline'); ?></p>
 					<?php endif; ?>
-          <a href="#" class="cta">
+          <a href="shop" class="cta">
             <span>in den Shop</span>
           </a>
         </div>

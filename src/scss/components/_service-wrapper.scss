@@ -10,6 +10,11 @@
   background: $color-main;
   color: $color-background;
 
+  @media screen and (max-width: $mobile-large) {
+    height: auto;
+    padding: 40px 0;
+  }
+
   .content-wrap {
     height: 100%;
     margin: auto;
@@ -20,6 +25,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: $mobile-large) {
+      flex-wrap: wrap;
+    }
   }
 
   .column {
@@ -29,6 +38,14 @@
     max-width: 268px;
     padding-left: 95px;
     position: relative;
+
+    @media screen and (max-width: $mobile-large) {
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding-left: 68px;
+      max-width: none;
+      height: 46px;
+    }
 
     &::before {
       content: '';
@@ -41,6 +58,11 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
+
+      @media screen and (max-width: $mobile-large) {
+        width: 45px;
+        height: 45px;
+      }
     }
   }
 

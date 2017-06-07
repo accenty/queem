@@ -1,0 +1,123 @@
+.woocommerce-order-received {
+  .woocommerce-notice {
+    font-size: 24px;
+    padding: 1.5em 0;
+    margin-bottom: 1em;
+    color: $color-highlight;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+
+    @media screen and (max-width: $breakpoint-medium-large) {
+      font-size: 21px;
+    }
+
+    @media screen and (max-width: $breakpoint-medium) {
+      font-size: 18px;
+    }
+
+    &::after {
+      content: '\f058';
+      font-family: 'FontAwesome';
+      margin-left: .5em;
+    }
+  }
+
+  .woocommerce-table--order-details {
+    @media screen and (max-width: $breakpoint-medium) {
+      font-size: 14px;
+    }
+  }
+
+  ul.order_details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: $color-neutral-brightest;
+    padding: 1em;
+    box-shadow: 0px 2px 5px rgba(0,0,0,.15);
+
+    @media screen and (max-width: $breakpoint-medium-large) {
+      flex-wrap: wrap;
+    }
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    li {
+      border: 0;
+      font-size: 12px;
+      font-weight: bold;
+      color: $color-font-dark;
+      margin: 0;
+
+      @media screen and (max-width: $breakpoint-medium-large) {
+        width: 50%;
+        margin-bottom: 2em;
+
+        &:nth-of-type(3n) {
+          margin-bottom: 0;
+        }
+
+        &:nth-of-type(4n) {
+          margin-bottom: 0;
+        }
+      }
+
+      @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+        width: 100%;
+        margin-bottom: 1.5em;
+
+        &:nth-of-type(3n) {
+          margin-bottom: 1.5em;
+        }
+      }
+
+      strong {
+        font-size: 21px;
+        font-weight: 300;
+        color: $color-font;
+
+        @media screen and (max-width: $breakpoint-medium-large) {
+          font-size: 18px;
+        }
+
+        @media screen and (max-width: $breakpoint-medium-large) {
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .woocommerce-order-details {
+    h2 {
+      font-size: 18px;
+      padding: .5em 0;
+      margin-bottom: 1em;
+      color: $color-highlight;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .125em;
+
+      @media screen and (max-width: $breakpoint-medium-large) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .woocommerce-columns--addresses {
+    background: $color-neutral-brightest;
+    padding: 1em;
+    box-shadow: 0px 2px 5px rgba(0,0,0,.15);
+
+    h3 {
+      text-transform: uppercase;
+      letter-spacing: .125em;
+      margin: 0;
+      margin-bottom: 1em;
+    }
+  }
+}

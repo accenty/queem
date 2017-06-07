@@ -1,0 +1,53 @@
+.woocommerce {
+  .woocommerce-breadcrumb {
+    margin: 2em 0;
+    font-family: $font-family;
+    background: $color-neutral-brightest;
+    box-shadow: 0px 2px 3px rgba(0,0,0,.125);
+
+    @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
+      margin: 0 0;
+    }
+
+    li {
+      display: block;
+      float: left;
+      position: relative;
+      padding: .5em 1em calc(.5em - 2px);
+      border-bottom: 2px solid transparent;
+
+      @media screen and (max-width: $breakpoint-medium) {
+        font-size: 14px;
+      }
+
+      &::after {
+        content: '\f105';
+        font-family: 'FontAwesome';
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: -2px;
+        transform: translateY(calc(-50% - 1px));
+
+        @media screen and (max-width: $breakpoint-medium-large ) {
+          transform: translateY(calc(-50% - 0px));
+        }
+      }
+
+      &:hover {
+        a {
+          color: $color-highlight;
+        }
+      }
+
+      &:last-of-type {
+        border-bottom: 2px solid $color-highlight;
+        color: $color-highlight;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
