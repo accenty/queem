@@ -112,7 +112,7 @@
           $loop = new WP_Query( $args );
           while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
           <li class="column">
-          <a href="<?php the_permalink ?>">
+          <a href="<?php the_permalink(); ?>">
             <?php
             if ( has_post_thumbnail( $loop->post->ID ) )
             echo get_the_post_thumbnail( $loop->post->ID, 'shop_catalog' );
