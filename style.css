@@ -1633,15 +1633,15 @@ a {
   color: #cbad79;
 }
 
+.assortment-container + .contact-container {
+  margin-top: -20.5%;
+}
+
 /*
 
   _contact-container.scss
 
 */
-.contact-container {
-  margin-top: -20.5%;
-}
-
 .contact-container .content-wrap {
   max-width: 1600px;
   display: flex;

@@ -95,4 +95,8 @@
       color: $color-main;
     }
   }
+
+  & + .contact-container {
+    margin-top: -20.5%;
+  }
 }
