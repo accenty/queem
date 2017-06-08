@@ -143,87 +143,20 @@
         </ul>
       </div>
     </div>
-    <!-- <div class="featured-products">
-      <div class="content-wrap">
-        <ul class="column-wrap">
-          <li class="column">
-            <figure>
-              <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/product-queem-whey.png" alt="">
-            </figure>
-            <h3>Queem Whey</h3>
-            <span class="subline">Männer - 750g</span>
-            <p>
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
-            </p>
-            <a href="#" class="cta add-to-cart"><span>In den Warenkorb</span></a>
-          </li>
-          <li class="column">
-            <figure>
-              <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/product-queem-whey.png" alt="">
-            </figure>
-            <h3>Queem Whey</h3>
-            <span class="subline">Männer - 750g</span>
-            <p>
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
-            </p>
-            <a href="#" class="cta add-to-cart"><span>In den Warenkorb</span></a>
-          </li>
-          <li class="column">
-            <figure>
-              <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/product-queem-whey.png" alt="">
-            </figure>
-            <h3>Queem Whey</h3>
-            <span class="subline">Männer - 750g</span>
-            <p>
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
-            </p>
-            <a href="#" class="cta add-to-cart"><span>In den Warenkorb</span></a>
-          </li>
-          <li class="column">
-            <figure>
-              <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/product-queem-whey.png" alt="">
-            </figure>
-            <h3>Queem Whey</h3>
-            <span class="subline">Männer - 750g</span>
-            <p>
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
-            </p>
-            <a href="#" class="cta add-to-cart"><span>In den Warenkorb</span></a>
-          </li>
-          <li class="column">
-            <figure>
-              <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/product-queem-whey.png" alt="">
-            </figure>
-            <h3>Queem Whey</h3>
-            <span class="subline">Männer - 750g</span>
-            <p>
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
-            </p>
-            <a href="#" class="cta add-to-cart"><span>In den Warenkorb</span></a>
-          </li>
-          <li class="column">
-            <figure>
-              <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/product-queem-whey.png" alt="">
-            </figure>
-            <h3>Queem Whey</h3>
-            <span class="subline">Männer - 750g</span>
-            <p>
-              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
-            </p>
-            <a href="#" class="cta add-to-cart"><span>In den Warenkorb</span></a>
-          </li>
-        </ul>
-      </div>
-    </div> -->
+    <?php if(get_field('add-content-title') || get_field('
+add-content-text')): ?>
     <div class="assortment-container">
       <div class="content-wrap">
-        <h2>Sortiment</h2>
+        <h2><?php the_Field('add-content-title'); ?></h2>
         <p>
-          Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+          <?php the_Field('add-content-text') ?>
         </p>
-        <a href="#" class="cta shop"><span>Zum Shop</span></a>
+        <?php if(get_field('add-content-call-to-action-url') || get_field('add-content-call-to-action-text')): ?>
+          <a href="<?php the_Field('add-content-call-to-action-url') ?>" class="cta shop"><span><?php the_Field('add-content-call-to-action-text') ?></span></a>
+        <?php endif; ?>
       </div>
     </div>
+    <?php endif; ?>
     <div class="contact-container">
       <div class="content-wrap">
         <div class="contact-wrapper">
