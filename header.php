@@ -64,9 +64,11 @@
 					<?php if(get_field('title-subline')): ?>
 	          <p><?php the_Field('title-subline'); ?></p>
 					<?php endif; ?>
-          <a href="shop" class="cta">
-            <span>in den Shop</span>
-          </a>
+					<?php if(get_field('call-to-action-link')): ?>
+			      <a href="<?php the_Field('call-to-action-link'); ?>" class="cta">
+			        <span><?php the_Field('call-to-action-text'); ?></span>
+			      </a>
+					<?php endif; ?>
         </div>
 
 				<?php if(get_field('title-img')): ?>
