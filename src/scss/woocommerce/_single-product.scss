@@ -66,7 +66,7 @@
       }
 
       .product_meta {
-        margin-bottom: .75em;
+        // margin-bottom: .75em;
         padding: 0 .5em .75em;
 
         .posted_in,
@@ -115,12 +115,13 @@
 
       .price-box {
         @extend %clearfix;
-        margin: 1em 0 0;
-        padding: 1em .5em;
-        border-bottom: 1px solid rgba($color-main,.15);
-        border-top: 1px solid rgba($color-main,.15);
+        margin: .5em 0 0;
+        padding: .5em .5em;
 
         .price {
+          font-size: 36px;
+          line-height: normal;
+          color: $color-highlight;
           display: block;
 
           strong {
@@ -132,12 +133,9 @@
             color: $color-font-dark;
           }
 
-          font-size: 31px;
-          line-height: normal;
-          color: $color-highlight;
 
           @media screen and (max-width: $breakpoint-medium-large) {
-            font-size: 24px;
+            font-size: 28px;
           }
         }
 
@@ -261,7 +259,7 @@
         width: calc(100% - 12% - .55em);
         background: $color-highlight;
         border: 2px solid $color-highlight;
-        border-radius: 0;
+        border-radius: 5px;
         text-transform: uppercase;
         letter-spacing: .125em;
         height: 55px;
@@ -277,13 +275,6 @@
         @media screen and (max-width: $breakpoint-medium-large) {
           width: calc(100% - 15% - .55em);
           height: 45px;
-        }
-
-        &::after {
-          content: '\f217';
-          font-family: 'FontAwesome';
-          font-weight: normal;
-          margin-left: .5em;
         }
 
         &:focus {
