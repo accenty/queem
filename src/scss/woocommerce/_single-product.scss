@@ -39,9 +39,10 @@
     }
 
     .entry-summary {
+      border-radius: 10px;
       background: $color-neutral-brightest;
       padding: 1.5em;
-      box-shadow: 0px 2px 3px rgba($color-main,.125);
+      box-shadow: 0px 15px 36px rgba(0, 0, 0, 0.1);
 
       @media screen and (max-width: $breakpoint-medium-large) {
         padding: 1.5em 1em 0em;
@@ -67,19 +68,19 @@
       .product_meta {
         margin-bottom: .75em;
         padding: 0 .5em .75em;
-        border-bottom: 1px solid rgba($color-main,.15);
 
         .posted_in,
         .sku_wrapper {
+          display: inline-block;
+
           a {
-            display: inline-block;
-            background: $color-neutral-1;
-            padding: 0em .75em;
-            color: $color-font;
+            border-radius: 20px;
+            display: inline;
+            height: auto;
+            color: $color-neutral-5;
             text-transform: uppercase;
             font-weight: 700;
-            font-size: 12px;
-            margin-top: .5em;
+            font-size: 14px;
 
             &::before {
               content: '\f02b';
@@ -88,8 +89,8 @@
             }
 
             &:hover {
-              background: $color-highlight;
-              color: $color-neutral-brightest;
+              border-color: $color-highlight;
+              color: $color-highlight;
             }
           }
         }
@@ -155,10 +156,9 @@
         margin: 0em 0 1em;
         padding: 0 .5em;
         p {
-          font-style: italic;
           font-size: 16px;
           line-height: 1.6em;
-          color: $color-neutral-3;
+          color: $color-neutral-5;
 
           @media screen and (max-width: $breakpoint-medium-large) {
             font-size: 14px;
@@ -186,6 +186,7 @@
       input[type="number"] {
         width: 100%;
         height: 55px;
+        border-radius: 5px;
         border: 1px solid rgba($color-main,.15);
         appearance: none;
         transition: $transition;
@@ -256,6 +257,7 @@
       }
 
       .button {
+        font-family: $font-main;
         width: calc(100% - 12% - .55em);
         background: $color-highlight;
         border: 2px solid $color-highlight;
@@ -282,6 +284,10 @@
           font-family: 'FontAwesome';
           font-weight: normal;
           margin-left: .5em;
+        }
+
+        &:focus {
+          outline: none;
         }
 
         &:hover {
