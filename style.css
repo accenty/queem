@@ -3387,6 +3387,7 @@ footer .copyright {
   font-size: 16px;
   transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
   margin-left: .25em;
+  margin-top: 2px;
 }
 
 @media screen and (max-width: 1024px) {

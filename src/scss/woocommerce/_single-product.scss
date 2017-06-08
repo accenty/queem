@@ -266,6 +266,7 @@
         font-size: 16px;
         transition: $transition;
         margin-left: .25em;
+        margin-top: 2px;
 
         @media screen and (max-width: $breakpoint-medium-large) {
           width: calc(100% - 20% - .55em);
