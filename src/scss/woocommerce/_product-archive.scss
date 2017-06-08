@@ -213,37 +213,97 @@
       margin-top: 1.25em;
     }
 
-    .add-to-cart-button {
-      border-radius: calc(57px / 2);
-      display: table;
-      margin: auto;
-      max-width: 226px;
-      width: 100%;
-      height: 57px;
-      background: $color-main-2;
-      color: $color-background;
-      border: 2px solid $color-main-2;
-      font-weight: bold;
-      font-size: 18px;
-      transition: $transition;
-      margin-top: 2.83em;
+  .add-to-cart,
+  .add_to_cart_button,
+  .add-to-cart-button {
+    border-radius: calc(57px / 2);
+    display: inline-block;
+    margin: auto;
+    max-width: 226px;
+    padding-top: 7px;
+    width: 100%;
+    height: 57px;
+    background: $color-main-2;
+    color: $color-background;
+    border: 2px solid $color-main-2;
+    font-weight: bold;
+    font-size: 18px;
+    transition: $transition;
+    margin-top: 2.83em;
 
-      @media screen and (max-width: $tablet-portrait ) {
-        height: 46px;
-        font-size: 16px;
-        width: 80%;
+    &::after {
+      transform: scale(0);
+    }
+
+    @media screen and (max-width: $tablet-portrait ) {
+      height: 46px;
+      font-size: 16px;
+      width: 80%;
+    }
+
+    &:hover {
+      background: transparent;
+      color: $color-main-2;
+    }
+
+    &.loading,
+    &.added {
+      border-color: $color-neutral-3;
+      background: transparent;
+      color: $color-font;
+      padding-right: 25px;
+      position: relative;
+      box-shadow: inset 0px 2px 10px rgba(0,0,0,.1);
+      opacity: .5;
+
+      &::after {
+        opacity: 1;
+        transform: scale(1);
+        content: '\f01e';
+        font-family: 'FontAwesome';
+        position: absolute;
+        margin-left: 10px;
+        animation: rotate 1s linear infinite;
+        font-weight: normal;
       }
 
-      span {
-        display: table-cell;
-        vertical-align: middle;
-      }
-
-      &:hover {
-        background: transparent;
-        color: $color-main-2;
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
     }
+
+    &.added {
+      background: $color-main;
+      border-color: $color-main;
+      color: $color-background;
+      box-shadow: none;
+      opacity: 1;
+
+      &::after {
+        animation: none;
+        content: '\f00c';
+      }
+    }
+  }
+
+  .added_to_cart {
+    display: block;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    color: $color-neutral-5;
+
+    &::after {
+      content: '\f105';
+      margin-left: .25em;
+      font-family: 'FontAwesome';
+    }
+  }
   }
 }
 
