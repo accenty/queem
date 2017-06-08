@@ -242,9 +242,7 @@
           </form>
         </div>
         <div class="gmaps-wrapper">
-          <figure>
-            <img src="http://placehold.it/560x780" alt="">
-          </figure>
+          <?php echo do_shortcode('[ank_google_map]'); ?>
         </div>
       </div>
     </div>
