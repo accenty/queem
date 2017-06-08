@@ -85,8 +85,65 @@
     	<?php endwhile; ?>
     </div>
     <?php endif; ?>
-
     <div class="featured-products">
+      <div class="content-wrap">
+        <ul class="column-wrap">
+          <?php
+          $meta_query  = WC()->query->get_meta_query();
+          $tax_query   = WC()->query->get_tax_query();
+          $tax_query[] = array(
+            'taxonomy' => 'product_visibility',
+            'field'    => 'name',
+            'terms'    => 'featured',
+            'operator' => 'IN',
+          );
+
+          $args = array(
+            'post_type'           => 'product',
+            'post_status'         => 'publish',
+            'ignore_sticky_posts' => 1,
+            'posts_per_page'      => $atts['per_page'],
+            'orderby'             => $atts['orderby'],
+            'order'               => $atts['order'],
+            'meta_query'          => $meta_query,
+            'tax_query'           => $tax_query,
+          );
+
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
+          <li class="column">
+          <a href="<?php the_permalink ?>">
+            <?php
+            if ( has_post_thumbnail( $loop->post->ID ) )
+            echo get_the_post_thumbnail( $loop->post->ID, 'shop_catalog' );
+            else
+            echo '<figure><img src="' . the_post_thumbnail() . '" /></figure>';
+            ?>
+          </a>
+          <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+          <span class="subline">
+            <?php
+                global $post, $product;
+                $categ = $product->get_categories();
+                echo $categ;
+            ?>
+          </span>
+          <p><?php the_excerpt(); ?></p>
+
+          <?php
+            woocommerce_template_loop_add_to_cart( $loop->post, $product );
+          ?>
+
+          </li>
+          <?php
+        endwhile;
+        wp_reset_query();
+        ?>
+
+        </ul>
+      </div>
+    </div>
+    <!-- <div class="featured-products">
       <div class="content-wrap">
         <ul class="column-wrap">
           <li class="column">
@@ -157,7 +214,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
     <div class="assortment-container">
       <div class="content-wrap">
         <h2>Sortiment</h2>
