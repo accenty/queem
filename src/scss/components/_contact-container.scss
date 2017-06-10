@@ -21,6 +21,27 @@
     width: 100%;
     padding: 95px 100px;
 
+    .wpcf7-form-control-wrap {
+      @extend %clearfix;
+      display: block;
+      width: calc((100% / 2) - ((1 * 40px) / 2));
+      margin-right: 40px;
+      float: left;
+
+      &:nth-of-type(2n) {
+        margin-right: 0;
+      }
+
+      &.your-message {
+        float: none;
+        width: 100%;
+      }
+    }
+
+    br {
+      display: none;
+    }
+
     @media screen and (max-width: $tablet-portrait) {
       padding: 50px;
     }
@@ -86,7 +107,8 @@
 
     input {
       float: left;
-      width: calc((100% / 2) - ((1 * 40px) / 2));
+      // width: calc((100% / 2) - ((1 * 40px) / 2));
+      width: 100%;
       margin-right: 40px;
 
       @media screen and (max-width: $mobile-large) {

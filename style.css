@@ -20,7 +20,7 @@
   mixins.scss
 
 */
-.contact-container .contact-wrapper fieldset::before, .main-nav ul::before, .woocommerce .single-product .entry-summary .price-box::before, .contact-container .contact-wrapper fieldset::after, .main-nav ul::after, .woocommerce .single-product .entry-summary .price-box::after {
+.contact-container .contact-wrapper .wpcf7-form-control-wrap::before, .contact-container .contact-wrapper fieldset::before, .main-nav ul::before, .woocommerce .single-product .entry-summary .price-box::before, .contact-container .contact-wrapper .wpcf7-form-control-wrap::after, .contact-container .contact-wrapper fieldset::after, .main-nav ul::after, .woocommerce .single-product .entry-summary .price-box::after {
   display: table;
   content: '';
   clear: both;
@@ -1660,6 +1660,26 @@ a {
   padding: 95px 100px;
 }
 
+.contact-container .contact-wrapper .wpcf7-form-control-wrap {
+  display: block;
+  width: calc((100% / 2) - ((1 * 40px) / 2));
+  margin-right: 40px;
+  float: left;
+}
+
+.contact-container .contact-wrapper .wpcf7-form-control-wrap:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+.contact-container .contact-wrapper .wpcf7-form-control-wrap.your-message {
+  float: none;
+  width: 100%;
+}
+
+.contact-container .contact-wrapper br {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .contact-container .contact-wrapper {
     padding: 50px;
@@ -1739,7 +1759,7 @@ a {
 
 .contact-container .contact-wrapper input {
   float: left;
-  width: calc((100% / 2) - ((1 * 40px) / 2));
+  width: 100%;
   margin-right: 40px;
 }
 

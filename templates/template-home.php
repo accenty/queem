@@ -161,18 +161,7 @@ add-content-text')): ?>
       <div class="content-wrap">
         <div class="contact-wrapper">
           <h3>Haben Sie noch Fragen?</h3>
-          <form>
-            <fieldset>
-              <input type="text" placeholder="Name">
-              <input type="text" placeholder="Vorname">
-            </fieldset>
-            <fieldset>
-              <input type="email" placeholder="E-Mail">
-              <input type="text" placeholder="Telefonnummer">
-            </fieldset>
-            <textarea placeholder="Ihr Anliegen..."></textarea>
-            <input type="submit" value="Senden">
-          </form>
+          <?php echo do_shortcode('[contact-form-7 id="59" title="Kontaktformular 1"]'); ?>
         </div>
         <div class="gmaps-wrapper">
           <?php echo do_shortcode('[ank_google_map]'); ?>
