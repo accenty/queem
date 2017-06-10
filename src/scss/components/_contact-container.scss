@@ -18,8 +18,12 @@
 
   .contact-wrapper {
     background: $color-background;
-    width: 100%;
+    width: 70%;
     padding: 95px 100px;
+
+    @media screen and (max-width: $tablet-portrait) {
+      width: 100%;
+    }
 
     .wpcf7-form-control-wrap {
       @extend %clearfix;
@@ -30,7 +34,8 @@
 
       @media screen and (max-width: $mobile-large) {
         width: 100%;
-        margin-bottom: 20px;
+        margin-right: 0;
+        margin-bottom: 10px;
       }
 
       &:nth-of-type(2n) {
@@ -75,6 +80,10 @@
       position: absolute;
       bottom: -34px;
 
+      @media screen and (max-width: $mobile-large) {
+        position: static;
+      }
+
       &::after {
         content: '\f06a';
         font-family: 'FontAwesome';
@@ -84,6 +93,10 @@
 
     .wpcf7-validation-errors {
       display: none !important;
+    }
+
+    .ajax-loader {
+      display: none;
     }
 
     br {
@@ -136,7 +149,7 @@
         margin-top: 30px;
 
         @media screen and (max-width: $tablet-portrait) {
-          margin-top: 30px;
+          margin-top: 15px;
         }
       }
     }
@@ -175,7 +188,7 @@
 
       @media screen and (max-width: $mobile-large) {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 0;
       }
 
       &:nth-of-type(2n) {
@@ -228,10 +241,11 @@
   }
 
   .gmaps-wrapper {
-    width: 50%;
-    max-width: 560px;
+    width: 38%;
+    // max-width: 560px;
     height: 780px;
     position: relative;
+    overflow: hidden;
 
     .agm-canvas {
       display: block;

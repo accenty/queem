@@ -897,7 +897,8 @@ a {
   align-items: center;
   width: 246px;
   height: 101px;
-  background: url("img/logo-queem.svg") no-repeat;
+  background: url("img/logo-queem.png") no-repeat;
+  background-size: contain;
   padding-left: 121px;
 }
 
@@ -911,12 +912,9 @@ a {
 }
 
 .logo span {
-  font-size: 32px;
-  letter-spacing: .120em;
-  color: #cbad79;
-  text-transform: uppercase;
-  position: relative;
-  top: -5px;
+  display: none;
+  display: inline-block;
+  text-indent: -9999px;
 }
 
 @media screen and (max-width: 560px) {
@@ -1051,6 +1049,7 @@ a {
 }
 
 .categories-wrapper .column {
+  position: relative;
   box-shadow: 0px 15px 36px rgba(0, 0, 0, 0.16);
   width: 100%;
   margin-right: 80px;
@@ -1094,7 +1093,28 @@ a {
 }
 
 .categories-wrapper .inner-content {
-  display: none;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 50%;
+}
+
+.categories-wrapper .inner-content strong {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 32px;
+  margin-bottom: .25em;
+}
+
+.categories-wrapper .inner-content p {
+  font-style: italic;
+  font-size: 21px;
+  line-height: 1.6em;
 }
 
 /*
@@ -1398,6 +1418,7 @@ a {
 
 .featured-products h3 {
   margin-top: 0.625em;
+  font-weight: bold;
 }
 
 .featured-products p {
@@ -1656,8 +1677,14 @@ a {
 
 .contact-container .contact-wrapper {
   background: #ffffff;
-  width: 100%;
+  width: 70%;
   padding: 95px 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-container .contact-wrapper {
+    width: 100%;
+  }
 }
 
 .contact-container .contact-wrapper .wpcf7-form-control-wrap {
@@ -1670,7 +1697,8 @@ a {
 @media screen and (max-width: 560px) {
   .contact-container .contact-wrapper .wpcf7-form-control-wrap {
     width: 100%;
-    margin-bottom: 20px;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 }
 
@@ -1714,6 +1742,12 @@ a {
   bottom: -34px;
 }
 
+@media screen and (max-width: 560px) {
+  .contact-container .contact-wrapper .wpcf7-not-valid-tip {
+    position: static;
+  }
+}
+
 .contact-container .contact-wrapper .wpcf7-not-valid-tip::after {
   content: '\f06a';
   font-family: 'FontAwesome';
@@ -1722,6 +1756,10 @@ a {
 
 .contact-container .contact-wrapper .wpcf7-validation-errors {
   display: none !important;
+}
+
+.contact-container .contact-wrapper .ajax-loader {
+  display: none;
 }
 
 .contact-container .contact-wrapper br {
@@ -1782,7 +1820,7 @@ a {
 
 @media screen and (max-width: 768px) {
   .contact-container .contact-wrapper fieldset:nth-of-type(2) {
-    margin-top: 30px;
+    margin-top: 15px;
   }
 }
 
@@ -1827,7 +1865,7 @@ a {
 @media screen and (max-width: 560px) {
   .contact-container .contact-wrapper input {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
 }
 
@@ -1885,10 +1923,10 @@ a {
 }
 
 .contact-container .gmaps-wrapper {
-  width: 50%;
-  max-width: 560px;
+  width: 38%;
   height: 780px;
   position: relative;
+  overflow: hidden;
 }
 
 .contact-container .gmaps-wrapper .agm-canvas {
@@ -3031,6 +3069,7 @@ footer .copyright {
 
 .product-archive .product__details h3 {
   margin-top: 0.625em;
+  font-weight: bold;
 }
 
 .product-archive .product__details h4 {
@@ -3048,7 +3087,7 @@ footer .copyright {
   display: inline-block;
   margin: auto;
   max-width: 226px;
-  padding-top: 7px;
+  padding-top: 18px;
   width: 100%;
   height: 57px;
   background: #fc5c5c;

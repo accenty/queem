@@ -10,45 +10,33 @@
         </ul>
       </div>
     </div>
-    <div class="categories-wrapper">
-      <div class="content-wrap">
-        <ul class="column-wrap">
-          <li class="column">
-            <a href="#">
-              <figure>
-                <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/content-img-01.png" alt="Content-image-01">
-              </figure>
-              <div class="inner-content">
-                <h2>Frau</h2>
-                <p>Exklusive Produkte für Ladies</p>
-              </div>
-            </a>
-          </li>
-          <li class="column">
-            <a href="#">
-              <figure>
-                <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/content-img-02.png" alt="Content-image-02">
-              </figure>
-              <div class="inner-content">
-                <h2>Mann</h2>
-                <p>Exklusive Produkte für Männer</p>
-              </div>
-            </a>
-          </li>
-          <li class="column">
-            <a href="#">
-              <figure>
-                <img src="http://beta.iamaviate.com/170602/wp/wp-content/uploads/2017/06/content-img-03.png" alt="Content-image-03">
-              </figure>
-              <div class="inner-content">
-                <h2>Sets</h2>
-                <p>Bunte Sets für Mann & Frau</p>
-              </div>
-            </a>
-          </li>
+    <?php if( have_rows('cat-link') ): ?>
+    	<div class="categories-wrapper">
+        <div class="content-wrap">
+          <ul class="column-wrap">
+          	<?php while( have_rows('cat-link') ): the_row();
+          		// vars
+          		$image = get_sub_field('absprung-bild');
+          		$content = get_sub_field('absprung-text');
+          		$url = get_sub_field('cat-link-url');
+          	?>
+          		<li class="column">
+                <a href="#">
+                  <?php if($content): ?>
+                    <figure>
+                      <img src="<?php echo $image; ?>" alt="">
+                    </figure>
+                  <div class="inner-content">
+                    <?php echo $content; ?>
+                  </div>
+                  <?php endif; ?>
+                </a>
+          		</li>
+          	<?php endwhile; ?>
         </ul>
       </div>
     </div>
+    <?php endif; ?>
     <?php if(get_field('about-text')): ?>
     <div class="about-wrapper">
       <div class="content-wrap">

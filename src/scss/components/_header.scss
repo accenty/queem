@@ -300,7 +300,8 @@
   align-items: center;
   width: 246px;
   height: 101px;
-  background: url('img/logo-queem.svg') no-repeat;
+  background: url('img/logo-queem.png') no-repeat;
+  background-size: contain;
   padding-left: 121px;
 
   @media screen and (max-width: $mobile-large) {
@@ -311,12 +312,9 @@
   }
 
   span {
-    font-size: 32px;
-    letter-spacing: .120em;
-    color: $color-main;
-    text-transform: uppercase;
-    position: relative;
-    top: -5px;
+    display: none;
+    display: inline-block;
+    text-indent: -9999px;
 
     @media screen and (max-width: $mobile-large) {
       font-size: 18px;
