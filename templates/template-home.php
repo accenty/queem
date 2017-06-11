@@ -21,7 +21,7 @@
           		$url = get_sub_field('cat-link-url');
           	?>
           		<li class="column">
-                <a href="#">
+                <a href="<?php echo $url; ?>">
                   <?php if($content): ?>
                     <figure>
                       <img src="<?php echo $image; ?>" alt="">
@@ -101,12 +101,14 @@
           while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
           <li class="column">
           <a href="<?php the_permalink(); ?>">
-            <?php
-            if ( has_post_thumbnail( $loop->post->ID ) )
-            echo get_the_post_thumbnail( $loop->post->ID, 'shop_catalog' );
-            else
-            echo '<figure><img src="' . the_post_thumbnail() . '" /></figure>';
-            ?>
+            <figure>
+              <?php
+              if ( has_post_thumbnail( $loop->post->ID ) )
+              echo get_the_post_thumbnail( $loop->post->ID, 'shop_catalog' );
+              else
+              echo '<img src="' . the_post_thumbnail() . '" />';
+              ?>
+            </figure>
           </a>
           <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
           <span class="subline">

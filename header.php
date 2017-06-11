@@ -24,9 +24,20 @@
 				<?php wp_nav_menu(array('theme_location' => 'header-navigation')); ?>
       </nav>
       <div class="cart-wrap">
-        <a href="#" class="cart">
-          <span>Warenkorb</span>
-        </a>
+				<?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+			    $count = WC()->cart->cart_contents_count;
+			    ?><a class="cart-contents cart-count" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">Warenkorb <?php
+			    if ( $count > 0 ) {
+			        ?>
+			        <span class="cart-contents-count">(<?php echo esc_html( $count ); ?>)</span>
+			        <?php
+			    } else {
+						echo '(0)';
+					}
+			        ?></a>
+
+			<?php } ?>
       </div>
     </div>
 		<div class="page-wrap">
@@ -43,14 +54,24 @@
             <nav class="main-nav">
 							<?php wp_nav_menu(array('theme_location' => 'header-navigation')); ?>
             </nav>
+            <div class="cart-wrap">
+							<?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 
+						    $count = WC()->cart->cart_contents_count;
+						    ?><a class="cart-contents cart-count" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">Warenkorb <?php
+						    if ( $count > 0 ) {
+						        ?>
+						        <span class="cart-contents-count">(<?php echo esc_html( $count ); ?>)</span>
+						        <?php
+						    } else {
+									echo '(0)';
+								}
+						        ?></a>
+
+						<?php } ?>
+            </div>
             <div class="search-wrap">
 							<?php get_template_part('searchform'); ?>
-            </div>
-            <div class="cart-wrap">
-              <a href="#" class="cart">
-                <span>Warenkorb</span>
-              </a>
             </div>
           </div>
         </div>

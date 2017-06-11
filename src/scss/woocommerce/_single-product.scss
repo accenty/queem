@@ -1,9 +1,15 @@
 .woocommerce {
+  background: #fafafa;
 
   div.product {
     div.images {
       @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
         margin-bottom: 0;
+      }
+
+      .woocommerce-product-gallery__image {
+        border-radius: 5px;
+        overflow: hidden;
       }
 
       .woocommerce-product-gallery__image {

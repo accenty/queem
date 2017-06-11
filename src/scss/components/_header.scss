@@ -165,12 +165,16 @@
 .hamburger {
   width: 24px;
   height: 12px;
-  display: block;
+  display: none;
   position: absolute;
   top: 50%;
   right: 15px;
   margin-top: -7px;
   cursor: pointer;
+
+  @media screen and (max-width: $tablet-landscape) {
+    display: block;
+  }
 
   span,
   &::before,
@@ -254,17 +258,17 @@
 }
 
 .search-wrap {
-  margin-right: 34px;
+
   input {
     border: 2px solid $color-background;
     color: $color-background;
     border-radius: 40px;
-    height: 64px;
-    width: 320px;
-    padding: 0 30px;
+    height: 48px;
+    width: 280px;
+    padding: 0 22px;
     background: transparent;
     font-family: $font-main;
-    font-size: 20px;
+    font-size: 18px;
     transition: $transition;
 
     &:focus {
@@ -280,6 +284,22 @@
 }
 
 .cart-wrap {
+  margin-right: 60px;
+
+  .cart-contents {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .125em;
+    font-size: 16px;
+    color: $color-main;
+
+    &::before {
+      content: '\f07a';
+      font-family: 'FontAwesome';
+      margin-right: .25em;
+    }
+  }
+
   .cart {
     display: block;
     width: 64px;

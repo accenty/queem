@@ -81,20 +81,20 @@
     border-radius: 10px;
     margin-bottom: 80px;
     box-shadow: 0px 15px 36px rgba(0,0,0,.1);
-    padding-bottom: 72px;
+    padding-bottom: 40px;
 
     @media screen and (max-width: $tablet-landscape ) {
       width: calc((100% / 2) - ((1 * 40px) / 2));
       margin-right: 40px;
       margin-bottom: 40px;
-      padding-bottom: 50px;
+      padding-bottom: 40px;
     }
 
     @media screen and (max-width: $tablet-portrait ) {
       width: calc((100% / 2) - ((1 * 20px) / 2));
       margin-right: 20px;
       margin-bottom: 20px;
-      padding-bottom: 50px;
+      padding-bottom: 40px;
     }
 
     @media screen and (max-width: $mobile-large ) {
@@ -123,6 +123,15 @@
   h3 {
     margin-top: 0.625em;
     font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .subline {
+    color: $color-neutral-5;
+    &::before {
+      content: '\f02b';
+      font-family: 'FontAwesome';
+    }
   }
 
   p {
@@ -131,13 +140,24 @@
     max-width: 405px;
     width: 85%;
     margin: auto;
-    margin-top: 2.81em;
+    margin-top: 1.41em;
   }
 
   figure,
   img {
     display: block;
     width: 100%;
+  }
+
+  figure {
+    height: 400px;
+    text-align: center;
+
+    img {
+      width: auto;
+      height: 100%;
+      margin: auto;
+    }
   }
 
   .add-to-cart,
@@ -155,7 +175,7 @@
     font-weight: bold;
     font-size: 18px;
     transition: $transition;
-    margin-top: 2.83em;
+    margin-top: 1.53em;
 
     &::after {
       transform: scale(0);

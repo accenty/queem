@@ -27,6 +27,7 @@
   }
 
   .product--small {
+    background: $color-background;
     max-width: 480px;
     width: calc((100% / 3) - ((2 * 80px) / 3));
     margin-right: 80px;
@@ -35,20 +36,20 @@
     border-radius: 10px;
     margin-bottom: 80px;
     box-shadow: 0px 15px 36px rgba(0,0,0,.1);
-    padding-bottom: 72px;
+    padding-bottom: 14px;
 
     @media screen and (max-width: $tablet-landscape ) {
       width: calc((100% / 2) - ((1 * 40px) / 2));
       margin-right: 40px;
       margin-bottom: 40px;
-      padding-bottom: 50px;
+      padding-bottom: 14px;
     }
 
     @media screen and (max-width: $tablet-portrait ) {
       width: calc((100% / 2) - ((1 * 20px) / 2));
       margin-right: 20px;
       margin-bottom: 20px;
-      padding-bottom: 50px;
+      padding-bottom: 14px;
     }
 
     @media screen and (max-width: $mobile-large ) {
@@ -136,27 +137,27 @@
       }
     }
 
-    figure {
-      overflow: hidden;
-      position: relative;
+    figure,
+    img {
+      display: block;
       width: 100%;
-      height: auto;
-      margin: 0;
-      padding: 0;
+    }
 
-      &::after {
-        // display: block;
-        // content: '';
-        // padding-bottom: 100%;
-      }
+    figure {
+      height: 400px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
 
       img {
-        width: 100%;
-        transition: $transition;
-        // position: absolute;
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%,-50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: auto;
+        max-width: none;
+        height: 100%;
+        margin: auto;
       }
     }
 
@@ -166,7 +167,7 @@
       max-width: 405px;
       width: 85%;
       margin: auto;
-      margin-top: 2.81em;
+      margin-top: 1.41em;
     }
 
     &:hover {
@@ -179,7 +180,7 @@
   }
 
   .product__details {
-    padding: 1em 1.5em 1em;
+    padding: 0.7em 1.5em 1em;
 
     em {
       font-size: 11px;
@@ -203,7 +204,16 @@
 
     h3 {
       margin-top: 0.625em;
+      text-transform: uppercase;
       font-weight: bold;
+    }
+
+    .subline {
+      color: $color-neutral-5;
+      &::before {
+        content: '\f02b';
+        font-family: 'FontAwesome';
+      }
     }
 
     h4 {
@@ -211,7 +221,7 @@
       font-size: 24px;
       color: $color-neutral-5;
       letter-spacing: .1em;
-      margin-top: 1.25em;
+      margin-top: 0.95em;
     }
 
   .add-to-cart,
@@ -230,7 +240,7 @@
     font-weight: bold;
     font-size: 18px;
     transition: $transition;
-    margin-top: 2.83em;
+    margin-top: 1.53em;
 
     &::after {
       transform: scale(0);
