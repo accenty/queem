@@ -1,6 +1,9 @@
 .search {
+  background: #fafafa;
+
   main {
     padding: 3em 0;
+    font-size: 18px;
   }
 
   h2 {
@@ -31,6 +34,11 @@
     @media screen and (max-width: $breakpoint-medium) {
       font-size: 16px;
     }
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6em;
   }
 
   .search-results {
