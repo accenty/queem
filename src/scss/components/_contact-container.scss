@@ -196,27 +196,23 @@
       }
 
       &[type="submit"] {
-        max-width: 196px;
-        height: 69px;
+        max-width: 166px;
+        height: 59px;
         border-radius: calc(69px / 2);
         border: 3px solid $color-font;
         background: $color-font;
         color: $color-background;
         font-weight: bold;
-        font-size: 24px;
+        font-size: 18px;
         box-shadow: 0 7px 10px rgba(0,0,0,.26);
         transition: $transition;
         cursor: pointer;
         margin-top: 1.66em;
 
         @media screen and (max-width: $tablet-portrait) {
-          font-size: 21px;
+          font-size: 16px;
           max-width: 150px;
-          height: 54px;
-        }
-
-        @media screen and (max-width: $tablet-portrait) {
-          font-size: 18px;
+          height: 55px;
         }
 
         &:hover {

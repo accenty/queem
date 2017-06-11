@@ -1,0 +1,43 @@
+.page-template-template-general {
+  background: $color-neutral-1;
+
+  .main-content-area {
+    padding: 3em 0;
+
+    @media screen and (max-width: $mobile-large) {
+      padding: 1em 0;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 2em;
+
+      @media screen and (max-width: $mobile-large) {
+        font-size: 16px;
+      }
+    }
+
+    article {
+      columns: 2;
+      text-align: justify;
+      column-gap: 2em;
+
+      @media screen and (max-width: $mobile-large) {
+        columns: 1;
+        text-align: left;
+      }
+    }
+  }
+
+  &.impressum {
+    .main-content-area {
+      p {
+        font-size: 16px;
+      }
+
+      article {
+        columns: 1;
+      }
+    }
+  }
+}

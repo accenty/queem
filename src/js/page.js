@@ -4,12 +4,25 @@
   $(function(){
     hamburgerNav();
     productDetailImageSwitcher();
+    backTop();
 
     $(window).scroll(function(){
       titleParallax();
     });
 
   });
+
+	function backTop() {
+		$(window).scroll(function(){
+			var $windowScroll = $(window).scrollTop();
+			$('.back-top').toggleClass('visible',$windowScroll > 600);
+		});
+
+		$('.back-top').click(function(e){
+			e.preventDefault();
+			$('html,body').animate({scrollTop: 0},700);
+		});
+	}
 
   function titleParallax() {
     var windowScroll = $(window).scrollTop();

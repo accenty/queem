@@ -16,6 +16,18 @@
 @import 'lib/reset';
 
 // Components
+@import 'woocommerce/breadcrumbs';
+@import 'woocommerce/button';
+@import 'woocommerce/cart';
+@import 'woocommerce/checkout';
+@import 'woocommerce/product-archive';
+@import 'woocommerce/single-product';
+@import 'woocommerce/tabs';
+@import 'woocommerce/woocommerce-order-received';
+
+@import 'wordpress/search';
+@import 'wordpress/content-page';
+
 @import 'components/general';
 @import 'components/header';
 @import 'components/service-wrapper';
@@ -29,12 +41,4 @@
 @import 'components/off-canvas';
 @import 'components/sections';
 @import 'components/footer';
-
-@import 'woocommerce/breadcrumbs';
-@import 'woocommerce/button';
-@import 'woocommerce/cart';
-@import 'woocommerce/checkout';
-@import 'woocommerce/product-archive';
-@import 'woocommerce/single-product';
-@import 'woocommerce/tabs';
-@import 'woocommerce/woocommerce-order-received';
+@import 'components/back-top';

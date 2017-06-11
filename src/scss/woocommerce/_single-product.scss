@@ -1,3 +1,7 @@
+.woocommerce-page {
+  background: #fafafa;
+}
+
 .woocommerce {
   background: #fafafa;
 
@@ -29,12 +33,33 @@
 
   .woocommerce-message {
     border-top: 0;
+    font-size: 18px;
+    padding: 1em 2em;
+
+    @media screen and (max-width: $mobile-large) {
+      padding: 1em 0 0;
+      font-size: 16px;
+      line-height: normal;
+      text-align: center;
+    }
+
+    &::before {
+      display: none;
+    }
 
     a {
+      margin-top: 0;
+      text-align: center;
+
       @media screen and (max-width: $breakpoint-small), (max-width: $breakpoint-medium-large) and (orientation: landscape) {
         float: none !important;
-        margin: 0.3em 0 1em;
-        text-align: right;
+        margin: 1em 0 1em;
+        padding-top: 9px;
+        text-align: center;
+        height: auto;
+        width: 100%;
+        margin-top: 0;
+        max-width: none;
       }
     }
   }
@@ -55,7 +80,7 @@
       }
 
       @media screen and (max-width: $breakpoint-medium) {
-        padding: 1.5em 1em .25em;
+        padding: 1em .5em .125em;
       }
 
       .product_title {

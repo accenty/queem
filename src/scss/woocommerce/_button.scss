@@ -15,6 +15,7 @@
       font-size: 18px;
       transition: $transition;
       margin-top: 2.83em;
+      text-align: center;
 
       @media screen and (max-width: $tablet-portrait ) {
         height: 46px;
@@ -34,6 +35,7 @@
 
       &.added {
         color: $color-cart-positive;
+        text-align: left;
 
         &::after {
           content: '\f00c';

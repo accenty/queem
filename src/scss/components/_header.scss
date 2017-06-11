@@ -14,7 +14,7 @@
 
   @media screen and (max-width: $mobile-large) {
     min-height: 0;
-    height: 64vh;
+    height: 80vh;
   }
 
   .content-wrap {
@@ -146,8 +146,31 @@
   }
 }
 
+.page-template-template-general {
+  .header {
+    height: 50vh;
+    min-height: 0;
+
+    @media screen and (max-width: $mobile-large) {
+      height: 60vh;
+    }
+
+    .title-container {
+      .content-wrap {
+        margin-top: 100px;
+
+        @media screen and (max-width: $mobile-large) {
+          margin-top: 54px;
+        }
+      }
+    }
+  }
+}
+
 .archive,
-.single-product {
+.single-product,
+.woocommerce-page,
+.search {
   .header {
     height: 158px;
     min-height: 0;
@@ -258,7 +281,6 @@
 }
 
 .search-wrap {
-
   input {
     border: 2px solid $color-background;
     color: $color-background;

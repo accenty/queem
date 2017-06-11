@@ -19,7 +19,7 @@
   }
 
   @media screen and (max-width: $mobile-large) {
-    padding: 80px 0 calc(20.5% + 80px);
+    padding: 60px 0 calc(20.5% + 60px);
     height: auto;
   }
 
@@ -55,7 +55,7 @@
     }
 
     @media screen and (max-width: $tablet-portrait) {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 

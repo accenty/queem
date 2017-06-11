@@ -24,7 +24,7 @@
             return e === t !== n;
         }) : "string" != typeof t ? he.grep(e, function(e) {
             return se.call(t, e) > -1 !== n;
-        }) : Ee.test(t) ? he.filter(t, e, n) : (t = he.filter(t, e), he.grep(e, function(e) {
+        }) : ke.test(t) ? he.filter(t, e, n) : (t = he.filter(t, e), he.grep(e, function(e) {
             return se.call(t, e) > -1 !== n && 1 === e.nodeType;
         }));
     }
@@ -130,11 +130,11 @@
             return ne.activeElement;
         } catch (e) {}
     }
-    function E(e, t, n, r, i, o) {
+    function k(e, t, n, r, i, o) {
         var a, s;
         if ("object" == typeof t) {
             "string" != typeof n && (r = r || n, n = void 0);
-            for (s in t) E(e, s, n, r, t[s], o);
+            for (s in t) k(e, s, n, r, t[s], o);
             return e;
         }
         if (null == r && null == i ? (i = n, r = n = void 0) : null == i && ("string" == typeof n ? (i = r, 
@@ -145,7 +145,7 @@
             he.event.add(this, t, i, r, n);
         });
     }
-    function k(e, t) {
+    function E(e, t) {
         return i(e, "table") && i(11 !== t.nodeType ? t : t.firstChild, "tr") ? he(">tbody", e)[0] || e : e;
     }
     function S(e) {
@@ -565,7 +565,7 @@
                 if (b.qsa && !z[e + " "] && (!F || !F.test(e))) {
                     if (1 !== h) d = t, p = e; else if ("object" !== t.nodeName.toLowerCase()) {
                         for ((s = t.getAttribute("id")) ? s = s.replace(xe, be) : t.setAttribute("id", s = M), 
-                        o = (c = E(e)).length; o--; ) c[o] = "#" + s + " " + f(c[o]);
+                        o = (c = k(e)).length; o--; ) c[o] = "#" + s + " " + f(c[o]);
                         p = c.join(","), d = me.test(e) && l(t.parentNode) || t;
                     }
                     if (p) try {
@@ -717,7 +717,7 @@
             };
             return i ? r(a) : a;
         }
-        var x, b, w, T, C, E, k, S, N, D, j, A, q, L, H, F, O, P, R, M = "sizzle" + 1 * new Date(), I = e.document, W = 0, $ = 0, B = n(), _ = n(), z = n(), X = function(e, t) {
+        var x, b, w, T, C, k, E, S, N, D, j, A, q, L, H, F, O, P, R, M = "sizzle" + 1 * new Date(), I = e.document, W = 0, $ = 0, B = n(), _ = n(), z = n(), X = function(e, t) {
             return e === t && (j = !0), 0;
         }, U = {}.hasOwnProperty, V = [], G = V.pop, Y = V.push, Q = V.push, J = V.slice, K = function(e, t) {
             for (var n = 0, r = e.length; n < r; n++) if (e[n] === t) return n;
@@ -910,7 +910,7 @@
                 },
                 PSEUDO: function(e) {
                     var t, n = !e[6] && e[2];
-                    return fe.CHILD.test(e[0]) ? null : (e[3] ? e[2] = e[4] || e[5] || "" : n && le.test(n) && (t = E(n, !0)) && (t = n.indexOf(")", n.length - t) - n.length) && (e[0] = e[0].slice(0, t), 
+                    return fe.CHILD.test(e[0]) ? null : (e[3] ? e[2] = e[4] || e[5] || "" : n && le.test(n) && (t = k(n, !0)) && (t = n.indexOf(")", n.length - t) - n.length) && (e[0] = e[0].slice(0, t), 
                     e[2] = n.slice(0, t)), e.slice(0, 3));
                 }
             },
@@ -973,7 +973,7 @@
             },
             pseudos: {
                 not: r(function(e) {
-                    var t = [], n = [], i = k(e.replace(oe, "$1"));
+                    var t = [], n = [], i = E(e.replace(oe, "$1"));
                     return i[M] ? r(function(e, t, n, r) {
                         for (var o, a = i(e, null, r, []), s = e.length; s--; ) (o = a[s]) && (e[s] = !(t[s] = o));
                     }) : function(e, r, o) {
@@ -1087,7 +1087,7 @@
                 return ("input" === n || "button" === n) && t.type === e;
             };
         }(x);
-        return c.prototype = w.filters = w.pseudos, w.setFilters = new c(), E = t.tokenize = function(e, n) {
+        return c.prototype = w.filters = w.pseudos, w.setFilters = new c(), k = t.tokenize = function(e, n) {
             var r, i, o, a, s, u, l, c = _[e + " "];
             if (c) return n ? 0 : c.slice(0);
             for (s = e, u = [], l = w.preFilter; s; ) {
@@ -1105,15 +1105,15 @@
                 if (!r) break;
             }
             return n ? s.length : s ? t.error(e) : _(e, u).slice(0);
-        }, k = t.compile = function(e, t) {
+        }, E = t.compile = function(e, t) {
             var n, r = [], i = [], o = z[e + " "];
             if (!o) {
-                for (t || (t = E(e)), n = t.length; n--; ) (o = v(t[n]))[M] ? r.push(o) : i.push(o);
+                for (t || (t = k(e)), n = t.length; n--; ) (o = v(t[n]))[M] ? r.push(o) : i.push(o);
                 (o = z(e, y(i, r))).selector = e;
             }
             return o;
         }, S = t.select = function(e, t, n, r) {
-            var i, o, a, s, u, c = "function" == typeof e && e, p = !r && E(e = c.selector || e);
+            var i, o, a, s, u, c = "function" == typeof e && e, p = !r && k(e = c.selector || e);
             if (n = n || [], 1 === p.length) {
                 if ((o = p[0] = p[0].slice(0)).length > 2 && "ID" === (a = o[0]).type && 9 === t.nodeType && H && w.relative[o[1].type]) {
                     if (!(t = (w.find.ID(a.matches[0].replace(ve, ye), t) || [])[0])) return n;
@@ -1124,7 +1124,7 @@
                     break;
                 }
             }
-            return (c || k(e, p))(r, t, !H, n, !t || me.test(e) && l(t.parentNode) || t), n;
+            return (c || E(e, p))(r, t, !H, n, !t || me.test(e) && l(t.parentNode) || t), n;
         }, b.sortStable = M.split("").sort(X).join("") === M, b.detectDuplicates = !!j, 
         A(), b.sortDetached = i(function(e) {
             return 1 & e.compareDocumentPosition(q.createElement("fieldset"));
@@ -1154,7 +1154,7 @@
     }, we = function(e, t) {
         for (var n = []; e; e = e.nextSibling) 1 === e.nodeType && e !== t && n.push(e);
         return n;
-    }, Te = he.expr.match.needsContext, Ce = /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i, Ee = /^.[^:#\[\.,]*$/;
+    }, Te = he.expr.match.needsContext, Ce = /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i, ke = /^.[^:#\[\.,]*$/;
     he.filter = function(e, t, n) {
         var r = t[0];
         return n && (e = ":not(" + e + ")"), 1 === t.length && 1 === r.nodeType ? he.find.matchesSelector(r, e) ? [ r ] : [] : he.find.matches(e, he.grep(t, function(e) {
@@ -1179,11 +1179,11 @@
             return !!o(this, "string" == typeof e && Te.test(e) ? he(e) : e || [], !1).length;
         }
     });
-    var ke, Se = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/;
+    var Ee, Se = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/;
     (he.fn.init = function(e, t, n) {
         var r, i;
         if (!e) return this;
-        if (n = n || ke, "string" == typeof e) {
+        if (n = n || Ee, "string" == typeof e) {
             if (!(r = "<" === e[0] && ">" === e[e.length - 1] && e.length >= 3 ? [ null, e, null ] : Se.exec(e)) || !r[1] && t) return !t || t.jquery ? (t || n).find(e) : this.constructor(t).find(e);
             if (r[1]) {
                 if (t = t instanceof he ? t[0] : t, he.merge(this, he.parseHTML(r[1], t && t.nodeType ? t.ownerDocument || t : ne, !0)), 
@@ -1193,7 +1193,7 @@
             return (i = ne.getElementById(r[2])) && (this[0] = i, this.length = 1), this;
         }
         return e.nodeType ? (this[0] = e, this.length = 1, this) : he.isFunction(e) ? void 0 !== n.ready ? n.ready(e) : e(he) : he.makeArray(e, this);
-    }).prototype = he.fn, ke = he(ne);
+    }).prototype = he.fn, Ee = he(ne);
     var Ne = /^(?:parents|prev(?:Until|All))/, De = {
         children: !0,
         contents: !0,
@@ -1791,10 +1791,10 @@
         };
     }), he.fn.extend({
         on: function(e, t, n, r) {
-            return E(this, e, t, n, r);
+            return k(this, e, t, n, r);
         },
         one: function(e, t, n, r) {
-            return E(this, e, t, n, r, 1);
+            return k(this, e, t, n, r, 1);
         },
         off: function(e, t, n) {
             var r, i;
@@ -1847,13 +1847,13 @@
         },
         append: function() {
             return A(this, arguments, function(e) {
-                1 !== this.nodeType && 11 !== this.nodeType && 9 !== this.nodeType || k(this, e).appendChild(e);
+                1 !== this.nodeType && 11 !== this.nodeType && 9 !== this.nodeType || E(this, e).appendChild(e);
             });
         },
         prepend: function() {
             return A(this, arguments, function(e) {
                 if (1 === this.nodeType || 11 === this.nodeType || 9 === this.nodeType) {
-                    var t = k(this, e);
+                    var t = E(this, e);
                     t.insertBefore(e, t.firstChild);
                 }
             });
@@ -2427,7 +2427,7 @@
             }
         };
     });
-    var Ct = e.location, Et = he.now(), kt = /\?/;
+    var Ct = e.location, kt = he.now(), Et = /\?/;
     he.parseXML = function(t) {
         var n;
         if (!t || "string" != typeof t) return null;
@@ -2578,8 +2578,8 @@
             (f = he.event && h.global) && 0 == he.active++ && he.event.trigger("ajaxStart"), 
             h.type = h.type.toUpperCase(), h.hasContent = !Ot.test(h.type), o = h.url.replace(qt, ""), 
             h.hasContent ? h.data && h.processData && 0 === (h.contentType || "").indexOf("application/x-www-form-urlencoded") && (h.data = h.data.replace(At, "+")) : (d = h.url.slice(o.length), 
-            h.data && (o += (kt.test(o) ? "&" : "?") + h.data, delete h.data), !1 === h.cache && (o = o.replace(Lt, "$1"), 
-            d = (kt.test(o) ? "&" : "?") + "_=" + Et++ + d), h.url = o + d), h.ifModified && (he.lastModified[o] && C.setRequestHeader("If-Modified-Since", he.lastModified[o]), 
+            h.data && (o += (Et.test(o) ? "&" : "?") + h.data, delete h.data), !1 === h.cache && (o = o.replace(Lt, "$1"), 
+            d = (Et.test(o) ? "&" : "?") + "_=" + kt++ + d), h.url = o + d), h.ifModified && (he.lastModified[o] && C.setRequestHeader("If-Modified-Since", he.lastModified[o]), 
             he.etag[o] && C.setRequestHeader("If-None-Match", he.etag[o])), (h.data && h.hasContent && !1 !== h.contentType || n.contentType) && C.setRequestHeader("Content-Type", h.contentType), 
             C.setRequestHeader("Accept", h.dataTypes[0] && h.accepts[h.dataTypes[0]] ? h.accepts[h.dataTypes[0]] + ("*" !== h.dataTypes[0] ? ", " + It + "; q=0.01" : "") : h.accepts["*"]);
             for (p in h.headers) C.setRequestHeader(p, h.headers[p]);
@@ -2734,13 +2734,13 @@
     he.ajaxSetup({
         jsonp: "callback",
         jsonpCallback: function() {
-            var e = _t.pop() || he.expando + "_" + Et++;
+            var e = _t.pop() || he.expando + "_" + kt++;
             return this[e] = !0, e;
         }
     }), he.ajaxPrefilter("json jsonp", function(t, n, r) {
         var i, o, a, s = !1 !== t.jsonp && (zt.test(t.url) ? "url" : "string" == typeof t.data && 0 === (t.contentType || "").indexOf("application/x-www-form-urlencoded") && zt.test(t.data) && "data");
         if (s || "jsonp" === t.dataTypes[0]) return i = t.jsonpCallback = he.isFunction(t.jsonpCallback) ? t.jsonpCallback() : t.jsonpCallback, 
-        s ? t[s] = t[s].replace(zt, "$1" + i) : !1 !== t.jsonp && (t.url += (kt.test(t.url) ? "&" : "?") + t.jsonp + "=" + i), 
+        s ? t[s] = t[s].replace(zt, "$1" + i) : !1 !== t.jsonp && (t.url += (Et.test(t.url) ? "&" : "?") + t.jsonp + "=" + i), 
         t.converters["script json"] = function() {
             return a || he.error(i + " was not called"), a[0];
         }, t.dataTypes[0] = "json", o = e[i], e[i] = function() {
@@ -2887,18 +2887,28 @@
     }, t || (e.jQuery = e.$ = he), he;
 }), function(e, t) {
     function n() {
+        t(e).scroll(function() {
+            var n = t(e).scrollTop();
+            t(".back-top").toggleClass("visible", n > 600);
+        }), t(".back-top").click(function(e) {
+            e.preventDefault(), t("html,body").animate({
+                scrollTop: 0
+            }, 700);
+        });
+    }
+    function r() {
         var n = t(e).scrollTop();
         t(".title-container figure").css({
             transform: "translate(0px, " + n / 2 + "px)"
         });
     }
-    function r() {
+    function i() {
         t(".hamburger").click(function() {
             t(this).toggleClass("active"), t(".off-canvas-nav").toggleClass("show-nav"), t(".page-wrap").toggleClass("show-nav"), 
             t("html").toggleClass("no-scroll");
         });
     }
-    function i() {
+    function o() {
         t(".woocommerce-product-gallery__image a").click(function(e) {
             e.preventDefault();
         }), t(".woocommerce-product-gallery__image a img").click(function() {
@@ -2907,8 +2917,8 @@
         });
     }
     t(function() {
-        r(), i(), t(e).scroll(function() {
-            n();
+        i(), o(), n(), t(e).scroll(function() {
+            r();
         });
     });
 }(window, jQuery);
