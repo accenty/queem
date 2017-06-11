@@ -1,10 +1,12 @@
 //@prepros-prepend lib/jquery.js
+//@prepros-prepend lib/swiper.jquery.js
 
 (function(window,$){
   $(function(){
     hamburgerNav();
     productDetailImageSwitcher();
     backTop();
+    initSwiper();
 
     $(window).scroll(function(){
       titleParallax();
@@ -53,4 +55,17 @@
 			$(this).attr('src',$baseImageSrc);
 		});
 	}
+
+  function initSwiper() {
+    var mySwiper = new Swiper ('.title-container.swiper-container', {
+      loop: false,
+      autoplay: 7000,
+      speed: 750,
+      pagination: '.swiper-pagination',
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      autoplayDisableOnInteraction: false,
+      paginationClickable: true,
+    })
+  }
 })(window,jQuery);

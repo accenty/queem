@@ -12,6 +12,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 
+		<meta name="theme-color" content="#cbad79">
+
 		<?php wp_head(); ?>
 
 	</head>
@@ -77,23 +79,37 @@
         </div>
       </div>
 
-      <div class="title-container">
-        <div class="content-wrap">
-					<?php if(get_field('title-h1')): ?>
-          	<h1><?php the_Field('title-h1'); ?></h1>
-					<?php endif; ?>
-					<?php if(get_field('title-subline')): ?>
-	          <p><?php the_Field('title-subline'); ?></p>
-					<?php endif; ?>
-					<?php if(get_field('call-to-action-link')): ?>
-			      <a href="<?php the_Field('call-to-action-link'); ?>" class="cta">
-			        <span><?php the_Field('call-to-action-text'); ?></span>
-			      </a>
-					<?php endif; ?>
-        </div>
-
-				<?php if(get_field('title-img')): ?>
-          <figure><img src="<?php the_Field('title-img'); ?>" alt="<?php the_Field('title-h1'); ?>" /></figure>
-				<?php endif; ?>
-      </div>
+			<?php if( have_rows('slider') ): ?>
+					<div class="swiper-container title-container">
+						<div class="swiper-wrapper">
+						<?php while( have_rows('slider') ): the_row();
+							$image = get_sub_field('title-img');
+							$h1 = get_sub_field('title-h1');
+							$subline = get_sub_field('title-subline');
+							$ctaText = get_sub_field('call-to-action-text');
+							$url = get_sub_field('call-to-action-link');
+						?>
+							<div class="swiper-slide">
+								<div class="content-wrap">
+									<?php if($h1): ?>
+										<h1><?php echo $h1; ?></h1>
+									<?php endif; ?>
+									<?php if($subline): ?>
+										<p><?php echo $subline; ?></p>
+									<?php endif; ?>
+									<?php if($ctaText || $url): ?>
+										<a href="<?php echo $url; ?>" class="cta"><span><?php echo $ctaText; ?></span></a>
+									<?php endif; ?>
+								</div>
+								<?php if($image): ?>
+									<figure><img src="<?php echo $image; ?>" alt="<?php echo $h1; ?>"/></figure>
+								<?php endif; ?>
+							</div>
+						<?php endwhile; ?>
+					</div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+		<?php endif; ?>
     </header>

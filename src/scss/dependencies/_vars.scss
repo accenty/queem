@@ -54,8 +54,8 @@ $desktop-large:          1440px;
 $desktop:                1280px;
 $tablet-landscape:       1024px;
 $tablet-portrait:        768px;
-$mobile-large:           560px;
-$mobile:                 360px;
+$mobile-large:           $tablet-portrait;
+$mobile:                 $tablet-portrait;
 
 $breakpoint-xlarge:      $desktop-large;
 $breakpoint-large:       $desktop;
