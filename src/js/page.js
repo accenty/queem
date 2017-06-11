@@ -1,4 +1,5 @@
 //@prepros-prepend lib/jquery.js
+//@prepros-prepend lib/jquery-ui.js
 //@prepros-prepend lib/swiper.jquery.js
 
 (function(window,$){
@@ -7,6 +8,8 @@
     productDetailImageSwitcher();
     backTop();
     initSwiper();
+
+    $('.single-product .quantity input[type=number]').spinner();
 
     $(window).scroll(function(){
       titleParallax();
